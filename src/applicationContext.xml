@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xmlns:aop="http://www.springframework.org/schema/aop"
+	     xmlns:tx="http://www.springframework.org/schema/tx"
+	     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+
+
+
+
+<!--  配置sessionFactory 
+  --> 
+	
+	<bean id="UserDao" class="healthclub.member.dao.impl.UserDaoImpl">
+		
+	</bean>
+	
+	<bean id="UserService" class="healthclub.member.service.impl.UserServiceImpl">
+		<property name="UserDao">
+			<ref bean="UserDao"/>
+		</property>
+	</bean>		
+	
+	<bean id="RegisterAction" class="healthclub.member.action.RegisterAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="RegisterAction2" class="healthclub.member.action.RegisterAction2">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="LoginAction" class="healthclub.member.action.LoginAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="ModifyAction" class="healthclub.member.action.ModifyAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="Modify2Action" class="healthclub.member.action.Modify2Action">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="HomepageAction" class="healthclub.member.action.HomepageAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="ActivityAction" class="healthclub.member.action.ActivityAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="OrderAction" class="healthclub.member.action.OrderAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="ProfileAction" class="healthclub.member.action.ProfileAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="ProfileAction2" class="healthclub.member.action.ProfileAction2">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="PaymentAction" class="healthclub.member.action.PaymentAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="CancelOrderedAction" class="healthclub.member.action.CancelOrderedAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="LogoutAction" class="healthclub.member.action.LogoutAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="SameUsernameAction" class="healthclub.member.action.js.SameUsernameAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="SameUsernameAction2" class="healthclub.member.action.js.SameUsernameAction2">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+
+	<bean id="BeforeModifyAction" class="healthclub.member.action.BeforeModifyAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="BeforeModify2Action" class="healthclub.member.action.BeforeModify2Action">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="JudgeOldPasswordAction" class="healthclub.member.action.js.JudgeOldPasswordAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="DeleteAccountAction" class="healthclub.member.action.DeleteAccountAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="ToDeleteAction" class="healthclub.member.action.js.ToDeleteAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	
+	
+	
+	
+    <bean id="WaiterDao" class="healthclub.waiter.dao.impl.WaiterDaoImpl">
+		
+	</bean>
+	
+	<bean id="WaiterService" class="healthclub.waiter.service.impl.WaiterServiceImpl">
+		<property name="WaiterDao">
+			<ref bean="WaiterDao"/>
+		</property>
+	</bean>		
+	
+	<bean id="W_LoginAction" class="healthclub.waiter.action.LoginAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>	
+	
+	<bean id="CardValidAction" class="healthclub.waiter.action.CardValidAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>	
+	
+	<bean id="GetSessionsByCardAction" class="healthclub.waiter.action.GetSessionsByCardAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>	
+	
+	<bean id="SearchAction" class="healthclub.waiter.action.SearchAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
+	<bean id="Search2Action" class="healthclub.waiter.action.Search2Action">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
+	<bean id="W_logoutAction" class="healthclub.waiter.action.W_logoutAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
+	<bean id="JoinAction" class="healthclub.waiter.action.JoinAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
+	<bean id="DeleteActAction" class="healthclub.waiter.action.DeleteActAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
+	<bean id="W_HomepageAction" class="healthclub.waiter.action.W_HomepageAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
+	<bean id="AddActivityAction" class="healthclub.waiter.action.AddActivityAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
+	<bean id="ModifyActAction" class="healthclub.waiter.action.ModifyActAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
+	<bean id="SaveActivityAction" class="healthclub.waiter.action.SaveActivityAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
+	<bean id="BeforeMakeActivity" class="healthclub.waiter.action.BeforeMakeActivity">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
+	<bean id="BeforeMemberCenter" class="healthclub.waiter.action.BeforeMemberCenter">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
+	<bean id="W_BeforeModifyAction" class="healthclub.waiter.action.W_BeforeModifyAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="W_BeforeModify2Action" class="healthclub.waiter.action.W_BeforeModify2Action">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="ActivateAction" class="healthclub.member.action.ActivateAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="PayAction" class="healthclub.member.action.PayAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
+	<bean id="ManagerDao" class="healthclub.manager.dao.impl.ManagerDaoImpl">
+		
+	</bean>
+	
+	<bean id="ManagerService" class="healthclub.manager.service.impl.ManagerServiceImpl">
+		<property name="ManagerDao">
+			<ref bean="ManagerDao"/>
+		</property>
+	</bean>		
+	
+	<bean id="Manager_LoginAction" class="healthclub.manager.action.Manager_LoginAction">
+		<property name="ManagerService">
+			<ref bean="ManagerService"/>
+		</property>
+	</bean>	
+	
+	<bean id="ManagerAction" class="healthclub.manager.action.ManagerAction">
+		<property name="ManagerService">
+			<ref bean="ManagerService"/>
+		</property>
+	</bean>	
+	
+	<bean id="Manager_LogoutAction" class="healthclub.manager.action.Manager_LogoutAction">
+		<property name="ManagerService">
+			<ref bean="ManagerService"/>
+		</property>
+	</bean>	
+	<!--  
+	<bean id="pay_quartz" class="healthclub.waiter.timer.Pay_Quartz">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	-->
+	
+	
+	
+<!-- timer//////////////////////////////////////////////////////////////////定时器 -->	
+	
+ 	
+	
+<bean id="pay" class="healthclub.waiter.timer.Pay">  
+	   
+       <property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+</bean>  
+
+<bean id="scheduledTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">  
+    
+    <property name="delay" value="5000" />   <!--  运行过程中延时10000ms(10s) --> 
+    
+    <property name="period" value="10000" />   <!--  每隔50000ms(50s)运行一次 -->
+    <property name="timerTask" ref="pay" />  
+</bean>  
+
+        <!-- 用于启动定时器  -->
+<bean id="timerFactory" class="org.springframework.scheduling.timer.TimerFactoryBean">  
+    <property name="scheduledTimerTasks">  
+        <list>  
+            
+            <ref bean="scheduledTask" />   <!--  这里是schedule列表  -->
+        </list>  
+    </property>  
+</bean>  
+	
+	
+	
+	
+	<!-- quartz//////////////////////////////////////////////////////////////////-->
+	 
+<bean id="sayHelloJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+  <property name="jobClass">
+      <value>healthclub.waiter.timer.Pay_Quartz</value>
+  </property>
+  <property name="jobDataAsMap"> 
+      <map>  
+                <entry key="WaiterService">  
+                    <ref bean="WaiterService"/>  
+                </entry>   
+  </map>
+  </property>  
+</bean>
+
+  <!-- 关键在如下两个触发器的配置 -->
+ <!-- 类似于Java的简单触发器 -->
+ <!-- 
+ <bean id="helloTrigger" class="org.springframework.scheduling.quartz.SimpleTriggerBean">
+ <property name="jobDetail">
+ <ref bean="sayHelloJob"/>
+ </property>
+ <property name="startDelay">
+ <value>1000</value>
+ </property>
+ <property name="repeatInterval">
+ <value>3000</value>
+ </property>
+ </bean>
+  -->
+  
+ <!-- 复杂触发器 -->
+ 
+ <bean id="helloCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+ <property name="jobDetail">
+ <ref bean="sayHelloJob"/>
+ </property>
+ <property name="cronExpression">
+  <!--  关键在配置此表达式 -->
+ <value>0 0 1 1 * ?</value>
+ </property>
+ </bean>
+ 
+ <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+ <property name="triggers">
+ <ref bean="helloCronTrigger"/>
+ </property>
+ </bean>
+	
+	
+	<!-- 
+	0 0 1 1 * ?      每月的1号，一点
+	0/10 * * * * ?
+	 -->
+	
+	
+	
+	
+</beans>

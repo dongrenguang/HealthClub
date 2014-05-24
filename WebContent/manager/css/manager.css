@@ -1,0 +1,39 @@
+.all_header{
+  height:45px;
+  background-color: #969696;
+}
+
+.btn_header{
+  float: right;
+  margin-right: 50px;
+}
+
+#reg_logo{
+  height:70px;
+  margin-top:2px;
+  margin-left: 40px;
+  float: left; 
+
+}
+
+.header_li{
+  margin-top: 5px;
+  height: 45px;
+  font-size: 20px;
+}
+
+#header_nav{
+  margin-bottom: 20px;
+}
+
+.nav_header{
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+#manager_container div{
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+}

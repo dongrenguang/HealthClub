@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+	<package name="struts2" namespace="/" extends="struts-default">
+
+
+		<action name="register" class="RegisterAction">
+			<result name="Login">/member/index.jsp</result>
+			<result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+		<action name="register2" class="RegisterAction2">
+			<result name="Login">/member/index.jsp</result>
+			<result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+		<action name="login" class="LoginAction">
+		    <result name="Homepage">/member/jsp/homepage.jsp</result>
+		    <result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+		<action name="modify" class="ModifyAction">
+		    <result name="ProfileAction" type="chain">profile</result>  	
+		    <result name="input">/member/jsp/error.jsp</result>
+		    <result name="Member" type="chain">SearchAction</result>
+		</action>
+		
+		<action name="modify2" class="Modify2Action">
+		    <result name="Profile2Action" type="chain">profile2</result>  	
+		    <result name="input">/member/jsp/error.jsp</result>
+		    <result name="Member2" type="chain">Search2Action</result>
+		</action>
+		
+		
+		<action name="homepage" class="HomepageAction">
+		    <result name="Homepage">/member/jsp/homepage.jsp</result>
+		    <result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+		<action name="activity" class="ActivityAction">
+		    <result name="Activity">/member/jsp/activity.jsp</result>
+		    <result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+	    <action name="order" class="OrderAction">
+		    <result name="Activity">/member/jsp/activity.jsp</result>
+		    <result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+		<action name="profile" class="ProfileAction">
+		    <result name="Profile">/member/jsp/profile.jsp</result>
+		    <result name="input">/member/jsp/error.jsp</result>
+		     <result name="Profile2" type="chain">profile2</result>
+		</action>
+		
+		<action name="profile2" class="ProfileAction2">
+		    <result name="Profile2">/member/jsp/profile2.jsp</result>
+		    <result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+		<action name="payment" class="PaymentAction">
+		    <result name="Payment">/member/jsp/payment.jsp</result>
+		    <result name="input">/member/jsp/error.jsp</result>
+		</action>
+
+		<action name="cancelOrdered" class="CancelOrderedAction">
+		    <result name="Profile">/member/jsp/profile.jsp</result>
+		    <result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+		<action name="logout" class="LogoutAction">
+		    <result name="Login">/member/index.jsp</result>
+		    <result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+	    <action name="sameUsername" class="SameUsernameAction">
+		</action>
+		
+	    <action name="sameUsername2" class="SameUsernameAction2">
+		</action>
+		
+	    <action name="beforeModify" class="BeforeModifyAction">
+		    <result name="Modify">/member/jsp/modify.jsp</result>
+		    <result name="input">/member/jsp/error.jsp</result>
+		</action>
+
+		<action name="beforeModify2" class="BeforeModify2Action">
+		    <result name="Modify2">/member/jsp/modify2.jsp</result>
+		    <result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+	    <action name="judgeOldPassword" class="JudgeOldPasswordAction">
+		</action>
+		
+		<action name="deleteAccount" class="DeleteAccountAction">
+		    <result name="Login">/member/index.jsp</result>
+			<result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+		<action name="toDelete" class="ToDeleteAction">
+		    <result name="Delete">/member/jsp/deleteAccount.jsp</result>
+			<result name="input">/member/jsp/error.jsp</result>
+		</action>
+		
+		<action name="W_LoginAction" class="W_LoginAction">
+		    <result name="W_Homepage" type="chain">W_HomepageAction</result>
+			<result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="CardValidAction" class="CardValidAction">
+		</action>
+		
+		<action name="GetSessionsByCardAction" class="GetSessionsByCardAction">
+		    <result name="Sessions"></result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="SearchAction" class="SearchAction">
+		    <result name="Member">/waiter/jsp/member.jsp</result>
+		    <result name="Search2Action" type="chain">Search2Action</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="Search2Action" class="Search2Action">
+		    <result name="Member2">/waiter/jsp/member2.jsp</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="W_logoutAction" class="W_logoutAction">
+		    <result name="Login">/waiter/index.jsp</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="JoinAction" class="JoinAction">
+		    <result name="Member" type="chain">SearchAction</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="DeleteActAction" class="DeleteActAction">
+		    <result name="Member" type="chain">SearchAction</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="W_HomepageAction" class="W_HomepageAction">
+		    <result name="W_Homepage" >/waiter/jsp/w_homepage.jsp</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="AddActivityAction" class="AddActivityAction">
+		    <result name="Activity" >/waiter/jsp/activity.jsp</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="ModifyActAction" class="ModifyActAction">
+		    <result name="Activity_modify" >/waiter/jsp/activity_modify.jsp</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="SaveActivityAction" class="SaveActivityAction">
+		    <result name="W_Homepage" type="chain">W_HomepageAction</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="BeforeMakeActivity" class="BeforeMakeActivity">
+		    <result name="MakeActivity" >/waiter/jsp/activity.jsp</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="BeforeMemberCenter" class="BeforeMemberCenter">
+		    <result name="MemberCenter">/waiter/jsp/member_search.jsp</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+	    <action name="W_BeforeModify" class="W_BeforeModifyAction">
+		    <result name="Modify">/waiter/jsp/modify.jsp</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+
+		<action name="W_BeforeModify2" class="W_BeforeModify2Action">
+		    <result name="Modify2">/waiter/jsp/modify2.jsp</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		
+		<action name="activate" class="ActivateAction">
+		    <result name="Payment" type="chain">payment</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="pay" class="PayAction">
+		    <result name="Payment" type="chain">payment</result>
+		    <result name="input">/waiter/jsp/error.jsp</result>
+		</action>
+		
+		<action name="Manager_LoginAction" class="Manager_LoginAction">
+		    <result name="ManagerAction" type="chain">ManagerAction</result>
+		    <result name="input">/manager/jsp/error.jsp</result>
+		</action>
+		
+		<action name="ManagerAction" class="ManagerAction">
+		    <result name="Manager">/manager/jsp/manager.jsp</result>
+		    <result name="input">/manager/jsp/error.jsp</result>
+		</action>
+		
+		<action name="Manager_LogoutAction" class="Manager_LogoutAction">
+		    <result name="Login">/manager/index.jsp</result>
+		    <result name="input">/manager/jsp/error.jsp</result>
+		</action>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	</package>
+
+</struts>
