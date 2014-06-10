@@ -11,7 +11,7 @@
 
 */
 
-$(function(){
+$(function(){	
 	$("#age").hide();
 	$("#gender").hide();
 	$("#address").hide();
@@ -109,9 +109,11 @@ $(function(){
 	    $("#persionnumber_day").hide();
 	    $("#persionnumber_month").show();
 	});
+	
 
-
-
+	
+	
+	
 
 
 

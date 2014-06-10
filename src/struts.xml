@@ -214,6 +214,10 @@
 		
 		
 		
+		<action name="checkPassword" class="CheckPasswordAction">
+		    
+		</action>
+		
 		
 		
 		

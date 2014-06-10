@@ -293,6 +293,12 @@
 			<ref bean="ManagerService"/>
 		</property>
 	</bean>	
+	
+	<bean id="CheckPasswordAction" class="healthclub.manager.action.CheckPasswordAction">
+		<property name="ManagerService">
+			<ref bean="ManagerService"/>
+		</property>
+	</bean>
 	<!--  
 	<bean id="pay_quartz" class="healthclub.waiter.timer.Pay_Quartz">
 		<property name="WaiterService">

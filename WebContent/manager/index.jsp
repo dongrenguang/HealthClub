@@ -11,6 +11,10 @@
 	
 	<link rel="stylesheet" href="<s:url value="/member/css/style.css" />" type="text/css" />
 	
+	<script src=<s:url value="/manager/js/jquery-1.7.1.min.js" /> type="text/javascript"></script>
+    <script src=<s:url value="/manager/js/bootstrap.js" /> type="text/javascript"></script>
+    <script src=<s:url value="/manager/js/login.js" /> type="text/javascript"></script>
+	
 	<!--- Javascript libraries (jQuery and Selectivizr) used for the custom checkbox --->
 
 	<!--[if (gte IE 6)&(lte IE 8)]>
@@ -24,7 +28,7 @@
 	<body>
 	
 		<div id="container">
-			<s:form action="/Manager_LoginAction" method="post" theme="simple">
+			<s:form action="/Manager_LoginAction" method="post" theme="simple" id="loginForm">
 				<div class="login">LOGIN · MANAGER</div>
 				<div class="username-text">Username:</div>
 				<div class="password-text">Password:</div>
@@ -37,7 +41,7 @@
 				<input type="checkbox" name="remember-me" id="remember-me" style="visibility:hidden;" /><label for="remember-me" style="visibility:hidden;"></label>
 				<div class="forgot-usr-pwd">
 				</div>
-				<s:submit name="submit" value="GO" />
+				<s:submit  value="GO" />
 			</s:form>
 		</div>
 
