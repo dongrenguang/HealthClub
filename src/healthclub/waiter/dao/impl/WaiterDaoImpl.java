@@ -103,7 +103,7 @@ public class WaiterDaoImpl implements WaiterDao{
 			result=stmt.executeQuery();		
             ArrayList<Session1> joinedAct=new ArrayList<Session1>();
 			while(result.next()){
-				Session1 session1=new Session1(result.getInt(1), result.getInt(2), result.getString(3), result.getString(4), result.getString(5), result.getString(6));
+				Session1 session1=new Session1(result.getInt(1), result.getInt(2), result.getString(3), result.getString(4), result.getString(5), result.getString(6),false);
 				joinedAct.add(session1);			
 			}
 			return joinedAct;

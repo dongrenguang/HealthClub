@@ -51,5 +51,7 @@ public interface UserDao {
 	public boolean pay(int pid);
 	
 	public boolean judgeUserState(int uid);
+	
+	public boolean hasOrderedSession(int uid,int sid);
 
 }

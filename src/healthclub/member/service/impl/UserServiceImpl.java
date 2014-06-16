@@ -98,6 +98,11 @@ public class UserServiceImpl implements UserService {
 	public boolean judgeUserState(int uid){
 		return userDao.judgeUserState(uid);
 	}
+	
+	public boolean hasOrderedSession(int uid,int sid){
+		return userDao.hasOrderedSession(uid, sid);
+	}
+	
 
 
 }

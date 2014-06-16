@@ -19,7 +19,7 @@
     </header>
     <div id="header_nav">
         <ul class="nav nav-pills nav_header">
-            <li><a  class="header_li" id="nav_age">Age</a></li>       
+            <li class="active"><a  class=" header_li" id="nav_age">Age</a></li>       
             <li><a  class=" header_li" id="nav_gender">Gender</a></li>
             <li><a  class=" header_li" id="nav_address">Address</a></li>
             <li><a  class=" header_li" id="nav_state">State</a></li>

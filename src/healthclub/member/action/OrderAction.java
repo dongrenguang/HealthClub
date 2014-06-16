@@ -23,9 +23,10 @@ public class OrderAction extends BaseAction{
 
 
 	public String execute(){
+		int userID;
 		try {
 			HttpSession  session=request.getSession();
-	   	    int sessionID=(int) session.getAttribute("id");
+	   	    userID=(int) session.getAttribute("id");
 		} catch (Exception e) {
 			// TODO: handle exception
 			return "input";
@@ -36,10 +37,18 @@ public class OrderAction extends BaseAction{
    	    Result result=userService.order(uid, sid);
    	    if (result==Result.SUCCESS){
    			sessionList=userService.getSessionList(aid);
+   			
+   			for(int i=0;i<sessionList.size();i++){
+   				Session1 session1=sessionList.get(i);
+   				boolean hasOrdered=userService.hasOrderedSession(userID, session1.getId());
+   			    sessionList.get(i).setHasOrdered(hasOrdered);
+   			}
+   			
    	    	return "Activity";
    	    }else{
    	    	return "input";
    	    }
+   	    
 	}
 	
 	public int getAid() {

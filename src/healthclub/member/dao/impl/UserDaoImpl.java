@@ -242,7 +242,7 @@ public class UserDaoImpl implements UserDao {
 			while (result.next()) {
 				Session1 session = new Session1(result.getInt(1), aid,
 						result.getString(3), result.getString(4),
-						result.getString(5), result.getString(6));
+						result.getString(5), result.getString(6),false);
 				sessionList.add(session);
 			}
 			return sessionList;
@@ -310,7 +310,7 @@ public class UserDaoImpl implements UserDao {
 				Session1 session1 = new Session1(result.getInt(1),
 						result.getInt(2), result.getString(3),
 						result.getString(4), result.getString(5),
-						result.getString(6));
+						result.getString(6),false);
 				hasOrderedAct.add(session1);
 			}
 			return hasOrderedAct;
@@ -341,7 +341,7 @@ public class UserDaoImpl implements UserDao {
 				Session1 session1 = new Session1(result.getInt(1),
 						result.getInt(2), result.getString(3),
 						result.getString(4), result.getString(5),
-						result.getString(6));
+						result.getString(6),false);
 				joinedAct.add(session1);
 			}
 			return joinedAct;
@@ -592,6 +592,35 @@ public class UserDaoImpl implements UserDao {
 		} finally {
 			daoHelper.closeConnection(con);
 			daoHelper.closePreparedStatement(stmt);
+		}
+		return false;
+		
+	}
+	
+	public boolean hasOrderedSession(int uid,int sid){
+		Connection con = daoHelper.getConnection();
+		PreparedStatement stmt = null;
+
+		ResultSet result = null;
+		try {
+			stmt = con
+					.prepareStatement("select * from joinin where uid=? and sid=?");
+			stmt.setInt(1, uid);
+			stmt.setInt(2, sid);
+			result = stmt.executeQuery();
+			if (result.next()) {
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			daoHelper.closeConnection(con);
+			daoHelper.closePreparedStatement(stmt);
+			daoHelper.closeResult(result);
 		}
 		return false;
 		

@@ -8,10 +8,11 @@ public class Session1 {
 	private String location;
 	private String coach;
 	private String theme;
+	private boolean hasOrdered;
 
 	
 	public Session1(int id, int aid, String time, String location,
-			String coach, String theme) {
+			String coach, String theme,boolean hasOrdered) {
 		super();
 		this.id = id;
 		this.aid = aid;
@@ -19,6 +20,7 @@ public class Session1 {
 		this.location = location;
 		this.coach = coach;
 		this.theme = theme;
+		this.setHasOrdered(hasOrdered);
 	}
 	
 	public Session1() {
@@ -61,6 +63,14 @@ public class Session1 {
 	}
 	public void setTheme(String theme) {
 		this.theme = theme;
+	}
+
+	public boolean getHasOrdered() {
+		return hasOrdered;
+	}
+
+	public void setHasOrdered(boolean hasOrdered) {
+		this.hasOrdered = hasOrdered;
 	}
 	
 	

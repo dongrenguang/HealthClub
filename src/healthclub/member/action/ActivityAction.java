@@ -17,9 +17,10 @@ public class ActivityAction extends BaseAction{
 	
 	
 	public String execute(){
+		int userID;
 		try {
 			HttpSession  session=request.getSession();
-	   	    int sessionID=(int) session.getAttribute("id");
+	   	    userID=(int) session.getAttribute("id");
 		} catch (Exception e) {
 			// TODO: handle exception
 			return "input";
@@ -30,6 +31,15 @@ public class ActivityAction extends BaseAction{
 		picture=activity.getPicture();
 		
 		sessionList=userService.getSessionList(aid);
+		for(int i=0;i<sessionList.size();i++){
+			Session1 session1=sessionList.get(i);
+			boolean hasOrdered=userService.hasOrderedSession(userID, session1.getId());
+		    sessionList.get(i).setHasOrdered(hasOrdered);
+		}
+		
+		for(int j=0;j<sessionList.size();j++){
+			System.out.println(sessionList.get(j).getHasOrdered());
+		}
 		return "Activity";
 	}
 

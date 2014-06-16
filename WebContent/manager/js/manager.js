@@ -31,6 +31,7 @@ $(function(){
 	    $("#site").hide();
 	    $("#persionnumber_day").hide();
 	    $("#persionnumber_month").hide();
+	    
 	});
 
 	$("#nav_gender").bind('click',function(){

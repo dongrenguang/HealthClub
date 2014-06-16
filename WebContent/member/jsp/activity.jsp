@@ -61,8 +61,13 @@
                             </s:param>
 
                         </s:url>
-                                    
-                        <s:a  theme="simple" href="%{orderLink}" cssClass="btn btn-primary" class="act_order">Order</s:a>
+                        
+                        <s:if test="#asession.hasOrdered==true">
+                            Ordered
+                        </s:if>    
+                        <s:else>
+                            <s:a  theme="simple" href="%{orderLink}" cssClass="" >Order</s:a>
+                        </s:else>
                     </td>
                   </tr>
                 </s:iterator>  

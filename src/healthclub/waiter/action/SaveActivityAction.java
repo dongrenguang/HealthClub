@@ -46,7 +46,7 @@ public class SaveActivityAction extends BaseAction{
 			String time=act_time.get(i);
 			String location=act_location.get(i);
 			String coach=act_coach.get(i);
-			Session1 s=new Session1(id, aid, time, location, coach, act_theme);
+			Session1 s=new Session1(id, aid, time, location, coach, act_theme,false);
 			sessionList.add(s);
 		}
 		 boolean res=waiterService.modifySession(sessionList);

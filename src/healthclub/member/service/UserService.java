@@ -34,5 +34,7 @@ public interface UserService {
 	public boolean activate(int uid);
 	public boolean pay(int pid);
 	public boolean judgeUserState(int uid);
+	public boolean hasOrderedSession(int uid,int sid);
+	
 
 }

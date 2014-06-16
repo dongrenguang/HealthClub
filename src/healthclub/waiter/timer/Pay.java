@@ -15,7 +15,7 @@ public class Pay extends TimerTask{
 	
 	public void run(){
 		String date=Assist.getNowDateTime();
-		System.out.println(date);
+		//System.out.println(date);
 //		System.out.println(waiterService);
 //		waiterService.createAccount();
 	}
