@@ -58,7 +58,8 @@
         </s:iterator>
 
 		<div class="row">
-			<div class="col-md-4 col-md-offset-4">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
 				<ul class="pagination">
 					<s:iterator value="#session.pageList" id="pageNumber" status="st">
 						<s:url action="page" var="pageLink">
@@ -82,6 +83,7 @@
 
 				</ul>
 			</div>
+			<div class="col-md-4"></div>
 		</div>
 
 	</div>
