@@ -45,9 +45,11 @@
 			</s:form>
 		</div>
 
+        <div style="height:30px;">
+             <p class="warning">Your username or password is wrong!</p>        
+        </div>
 		<div id="login_to_register">
 			<a href="<s:url value="/member/jsp/register.jsp" />" title="Creat a new Health Club account"></a>
-
 		</div>
 		<div id="footer">
 			Copyright &copy; Software Institute Of Nanjing University <br>

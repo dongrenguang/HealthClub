@@ -212,11 +212,19 @@
 		    <result name="input">/manager/jsp/error.jsp</result>
 		</action>
 		
-		
-		
 		<action name="checkPassword" class="CheckPasswordAction">
-		    
 		</action>
+		
+		<action name="CheckPasswordMemberAction" class="CheckPasswordAction" method="member">
+		</action>
+		
+		<action name="CheckPasswordWaiterAction" class="CheckPasswordAction" method="waiter">
+		</action>
+		
+		
+		
+		
+		
 		
 		
 		

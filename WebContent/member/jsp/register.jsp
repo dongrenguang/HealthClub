@@ -51,11 +51,13 @@
           <tr  >
             <td> <label for="reg_username">Username</label></td>
             <td><s:textfield id="reg_username" name="reg_username"  cssClass="form-control" placeholder="Username" /></td>
+            <td>The username has been used!</td>
           </tr>
 
           <tr>
             <td><label for="reg_email">Email</label></td>
             <td><s:textfield   type="email" id="reg_email" name="reg_email"  cssClass="form-control" placeholder="Email" /></td>
+            <td>Email format is wrong!</td>
           </tr>
 
           <tr>
@@ -65,6 +67,7 @@
           <tr>
             <td><label for="reg_password_again">Password</label></td>
             <td><s:password showPassword="true" id="reg_password_again" name="reg_password_again"  cssClass="form-control" placeholder="Password Again"/> </td>
+            <td>Your two passwords is not consistent!</td>
           </tr>
           
           <tr>
@@ -77,6 +80,7 @@
             <td>             
                 <s:file id="reg_picture" name="reg_picture" />
             </td>
+            <td>Image format error!Please in png,gif,jpg,jpeg,or bmp!</td>
           </tr>
 
           <tr>

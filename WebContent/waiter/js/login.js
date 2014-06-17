@@ -14,7 +14,7 @@
 $(function(){	
 	$.ajaxSetup({ 
 	    async : false 
-	});  
+	});    
 	
 	$(".warning").hide();
 	
@@ -23,7 +23,7 @@ $(function(){
 		var pw=$("#password").attr("value");
 		var flag=false;
 		
-		$.get('checkPassword',{username: uname, password: pw},function(response){
+		$.get('CheckPasswordWaiterAction',{username: uname, password: pw},function(response){
 			
 			if(response=="N"){
 				$(".warning").show();

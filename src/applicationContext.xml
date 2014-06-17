@@ -298,7 +298,17 @@
 		<property name="ManagerService">
 			<ref bean="ManagerService"/>
 		</property>
+		
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+		
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
 	</bean>
+	
+	
 	<!--  
 	<bean id="pay_quartz" class="healthclub.waiter.timer.Pay_Quartz">
 		<property name="WaiterService">

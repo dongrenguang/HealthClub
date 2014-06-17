@@ -9,7 +9,11 @@
 
 	<title>HealthClub Login</title>	
 	
-	<link rel="stylesheet" href="<s:url value="/waiter/css/style.css" />" type="text/css" />
+	<link rel="stylesheet" href="<s:url value="/member/css/style.css" />" type="text/css" />
+	
+	<script src=<s:url value="/waiter/js/jquery-1.7.1.min.js" /> type="text/javascript"></script>
+    <script src=<s:url value="/waiter/js/bootstrap.js" /> type="text/javascript"></script>
+    <script src=<s:url value="/waiter/js/login.js" /> type="text/javascript"></script>
 	
 	<!--- Javascript libraries (jQuery and Selectivizr) used for the custom checkbox --->
 
@@ -24,7 +28,7 @@
 	<body>
 	
 		<div id="container">
-			<s:form action="/W_LoginAction" method="post" theme="simple">
+			<s:form action="/W_LoginAction" method="post" theme="simple" id="loginForm">
 				<div class="login">LOGIN · WAITER</div>
 				<div class="username-text">Username:</div>
 				<div class="password-text">Password:</div>
@@ -37,9 +41,13 @@
 				<input type="checkbox" name="remember-me" id="remember-me" style="visibility:hidden;" /><label for="remember-me" style="visibility:hidden;"></label>
 				<div class="forgot-usr-pwd">
 				</div>
-				<s:submit name="submit" value="GO" />
+				<s:submit  value="GO" />
 			</s:form>
 		</div>
+		
+		<div style="height:30px;">
+             <p class="warning">Your username or password is wrong!</p>        
+        </div>
 
 		<div id="login_to_register">
 			<a href="<s:url value="jsp/register.jsp" />" title="Creat a new Health Club account"></a>

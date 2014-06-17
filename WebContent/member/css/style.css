@@ -296,3 +296,11 @@ input[type="submit"]:hover, input[type="submit"]:focus {
 	color: #242424;
 	font-style: italic;
 }
+
+.warning{
+	width:350px;
+	color: red;
+	font-family: Verdana, Arial;
+	margin-left:auto;
+	margin-right:auto;
+}
