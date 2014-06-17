@@ -172,7 +172,9 @@ public class Assist {
 	    Calendar c=Calendar.getInstance();
 		int current_year = c.get(Calendar.YEAR);    //获取年
 		int current_month = c.get(Calendar.MONTH) + 1;   //获取月份，0表示1月份
-		
+		System.out.println("current:"+current_year+","+current_month);
+		System.out.println("in:"+year+","+monthInt);
+
 		if(current_year!=year || current_month!=monthInt){
 			return "";
 		}else{

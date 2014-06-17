@@ -30,7 +30,6 @@ public class RegisterAction extends BaseAction {
 	private String reg_pictureFileName;// igoo.png
 	private String savePath = "member/images/picture";
 	
-	
 	private ArrayList<Activity> activityList=new ArrayList<Activity>();
 
 	@Override

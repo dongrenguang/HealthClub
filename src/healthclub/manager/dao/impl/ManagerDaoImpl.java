@@ -441,8 +441,11 @@ public class ManagerDaoImpl implements ManagerDao {
 			result = stmt.executeQuery();
 			HashMap<String, Integer> map=new HashMap<String, Integer>();
 			while(result.next()){
+
 				String timeString=result.getString(1);
 				String dayString=Assist.getCurrentMonthDay(timeString);
+				System.out.println(dayString+"fdsfsfds:"+timeString);
+
 				if(dayString.equals("")){
 					continue;
 				}
@@ -452,12 +455,13 @@ public class ManagerDaoImpl implements ManagerDao {
 				}
 				map.put(dayString, cnt + 1);
 			}
-			
+
 			//≈≈–Ú
 			List<Map.Entry<String, Integer>> infoIds = Assist.lineSort(map);
 			ArrayList<Line2> lineList = new ArrayList<Line2>();
 			for (int i = 0; i < infoIds.size(); i++) {
 				String key = infoIds.get(i).getKey();
+				System.out.println(key);
 				int value = infoIds.get(i).getValue();
 				Line2 line2 = new Line2(key, value);
 				lineList.add(line2);

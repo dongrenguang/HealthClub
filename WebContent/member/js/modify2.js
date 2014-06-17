@@ -1,5 +1,7 @@
 $(function(){
 
+	$(".warning").hide();
+	
 	$('.datepicker').live('click',function(event){
 		$(this).datepicker();
 	});
@@ -29,31 +31,42 @@ $(function(){
 		}
 		$.get('sameUsername',{reg_username: username},function(response){
 			if(response=="Y"){
-				alert("Your username '"+username+"' has been used!");
+				$("#warn_fusername").show();
 				$('#reg_username').attr('value',old_username);
 				$('#reg_username').focus();
-
+			}else{
+				$("#warn_fusername").hide();
 			}
 		});		
 	});
 
 	$('#reg_email').bind('change',function(event){
 		var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+		$("#warn_femail2").hide();
 	    if(!(reg.test($("#reg_email").attr("value"))))
 		{
-		    alert("Email format is wrong!");
+	    	$("#warn_femail").show();
 		    $('#reg_email').focus();
-		}	
+		}else{
+			$("#warn_femail").hide();
+		}
 	});
 
 	$('#upload').bind('change',function(event){
 		var fileext=document.register_info.upload.value.substring(document.register_info.upload.value.lastIndexOf("."),document.register_info.upload.value.length);
         fileext=fileext.toLowerCase();
+        $("#warn_fusername2").hide();
         if ((fileext!='.jpg')&&(fileext!='.gif')&&(fileext!='.jpeg')&&(fileext!='.png')&&(fileext!='.bmp'))
         {
         	$('#upload').attr('value',null);
-            alert("Image format error!Please upload your image in format png,gif,jpg,jpeg,or bmp!");
+        	$("#warn_fusername").show();
+        }else{
+        	$("#warn_fusername").hide();
         }
+	});
+	
+	$("#reg_address").bind('change',function(event){
+		$("#warn_faddress2").hide();
 	});
 
 	$('#old_password').bind('change',function(){
@@ -105,13 +118,13 @@ $(function(){
 	    var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
 	    var fileext=document.register_info.upload.value.substring(document.register_info.upload.value.lastIndexOf("."),document.register_info.upload.value.length);
         fileext=fileext.toLowerCase();
-        
-	    if(!( (username!=null) && (email!=null) &&  (address!=null)  
-	    		&& (username!="") && (email!="") && (address!="") ))
+       /* 
+	    if(!((username!="") && (email!="") && (address!="") ))
 	    {
 	    	alert('You have not write some important information!');
 	    	return false;
-	    }else if(!(reg.test(email))){
+	    }
+	    else if(!(reg.test(email))){
 	    	 alert("Email format is wrong!");
 	    	 return false;
 	    }else if( (fileext!="")&&(fileext!='.jpg')&&(fileext!='.gif')&&(fileext!='.jpeg')&&(fileext!='.png')&&(fileext!='.bmp'))
@@ -119,7 +132,25 @@ $(function(){
         	$('#upload').attr('value',null);
             alert("Image format error!Please upload your image in format png,gif,jpg,jpeg,or bmp!");
             return false;
-        }else{
+        }
+        */
+        if(username==""){
+	    	$("#warn_fusername").hide();
+	    	$("#warn_fusername2").show();
+	    	return false;
+	    }else if(email==""){
+	    	$("#warn_femail").hide();
+	    	$("#warn_femail2").show();
+	    	return false;
+	    }else if(address==""){
+	    	$("#warn_faddress2").show();
+	    	return false;
+	    }else if(!(reg.test(email))){
+	    	$("#warn_femail2").hide();
+	    	$("#warn_femail").show();
+	    	 return false;
+	    }
+	    else{
         	return true;
         }  
         

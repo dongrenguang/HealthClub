@@ -8,14 +8,13 @@
 
 	<package name="struts2" namespace="/" extends="struts-default">
 
-
 		<action name="register" class="RegisterAction">
 			<result name="Homepage">/member/jsp/homepage.jsp</result>
 			<result name="input">/member/jsp/error.jsp</result>
 		</action>
 		
 		<action name="register2" class="RegisterAction2">
-			<result name="Login">/member/index.jsp</result>
+			<result name="Homepage">/member/jsp/homepage.jsp</result>
 			<result name="input">/member/jsp/error.jsp</result>
 		</action>
 		

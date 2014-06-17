@@ -136,32 +136,51 @@
         <table class="table table-hover ">
           <tr  >
             <td> <label for="reg_username2">Username</label></td>
-            <td><s:textfield id="reg_username2" name="reg_username2"  cssClass="form-control" placeholder="Username" /></td>
+            <td>
+            	<s:textfield id="reg_username2" name="reg_username2"  cssClass="form-control" placeholder="Username" />
+            	<p class="warning" id="warn_fusername" >The username has been used!</p>
+                <p class="warning" id="warn_fusername2" >Please input the username!</p>
+            </td>
           </tr>
 
           <tr>
             <td><label for="reg_email2">Email</label></td>
-            <td><s:textfield   id="reg_email2" name="reg_email2"  cssClass="form-control" placeholder="Email" /></td>
+            <td>
+            	<s:textfield   id="reg_email2" name="reg_email2"  cssClass="form-control" placeholder="Email" />
+            	<p class="warning" id="warn_femail">Email format is wrong!</p>
+                <p class="warning" id="warn_femail2">Please input the email!</p>
+            </td>
           </tr>
 
           <tr>
             <td><label for="reg_password2">Password</label></td>
-            <td><s:password showPassword="true" id="reg_password2" name="reg_password2" cssClass="form-control" placeholder="Password" /> </td>
+            <td>
+                <s:password showPassword="true" id="reg_password2" name="reg_password2" cssClass="form-control" placeholder="Password" />
+           		<p class="warning" id="warn_ffirstpassword2">Please input the password!</p> 
+           	</td>
           </tr>
           <tr>
             <td><label for="reg_password_again2">Password</label></td>
-            <td><s:password showPassword="true" id="reg_password_again2" name="reg_password_again2"  cssClass="form-control" placeholder="Password Again"/> </td>
+            <td>
+            	<s:password showPassword="true" id="reg_password_again2" name="reg_password_again2"  cssClass="form-control" placeholder="Password Again"/>
+            	<p class="warning" id="warn_fpassword">Two passwords aren't consistent!</p>
+                <p class="warning" id="warn_fpassword2">Please input the password again!</p>
+            </td>
           </tr>
           
           <tr>
             <td><label for="reg_address2">Address</label></td>
-            <td><s:textfield type="text" id="reg_address2" name="reg_address2" label="Address" cssClass="form-control" placeholder="Address" /></td>
+            <td>
+            	<s:textfield type="text" id="reg_address2" name="reg_address2" label="Address" cssClass="form-control" placeholder="Address" />
+            	<p class="warning" id="warn_faddress2">Please input the address!</p>
+            </td>
           </tr>
 
           <tr>
             <td><label for="reg_picture2">Picture</label></td>
             <td>             
                 <s:file id="reg_picture2" name="reg_picture2" />
+                <p class="warning" id="warn_fpicture">Format must be png,gif,jpg,jpeg,or bmp!</p>
             </td>
           </tr>
           <tr>
