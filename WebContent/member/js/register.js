@@ -5,33 +5,45 @@ $(function(){
 		$(this).datepicker();
 	});
 	
+	$('#reg_password').bind('change',function(event){
+		$("#warn_firstpassword2").hide();
+	});
+	
 	$('#reg_password_again').bind('change',function(event){
 		var pw1=$("#reg_password").attr("value");
 	    var pw2=$("#reg_password_again").attr("value");
+	    $("#warn_password2").hide();
 	    if(pw1!=pw2){
-		  alert("Your two passwords is not consistent!");
+		  $("#warn_password").show();
 		  $('#reg_password_again').attr('value',null);
 		  $('#reg_password_again').focus();
+	    }else{
+	    	$("#warn_password").hide();
 	    }
 	});
 	
 	$('#reg_email').bind('change',function(event){
 		var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+		$("#warn_email2").hide();
 	    if(!(reg.test($("#reg_email").attr("value"))))
 		{
-		    alert("Email format is wrong!");
 		    $('#reg_email').focus();
+		    $("#warn_email").show();
+		}else{
+			$("#warn_email").hide();
 		}	
 	});
 	
 	$('#reg_username').bind('change',function(event){
-		
+		$("#warn_username2").hide();
 		var username=$("#reg_username").attr("value");
-		$.get('sameUsername',{reg_username: $("#reg_username").attr("value")},function(response){
+		$.get('sameUsername',{reg_username: username},function(response){
 			if(response=="Y"){
-				alert("Your username '"+username+"' has been used!");
+				$("#warn_username").show();
 				$('#reg_username').attr('value',null);
 				$('#reg_username').focus();
+			}else{
+				$("#warn_username").hide();
 			}
 		});		
 	});
@@ -42,8 +54,18 @@ $(function(){
         if ((fileext!='.jpg')&&(fileext!='.gif')&&(fileext!='.jpeg')&&(fileext!='.png')&&(fileext!='.bmp'))
         {
         	$('#reg_picture').attr('value',null);
-            alert("Image format error!Please upload your image in format png,gif,jpg,jpeg,or bmp!");
+        	$("#warn_picture").show();
+        }else{
+        	$("#warn_picture").hide();
         }
+	});
+	
+	$("#reg_address").bind('change',function(event){
+		$("#warn_address2").hide();
+	});
+	
+	$("#reg_birthday").bind('change',function(event){
+		$("#warn_birthday2").hide();
 	});
 	
 	$('#register_info').bind('submit',function(event){
@@ -59,12 +81,35 @@ $(function(){
 	    var fileext=document.register_info.reg_picture.value.substring(document.register_info.reg_picture.value.lastIndexOf("."),document.register_info.reg_picture.value.length);
         fileext=fileext.toLowerCase();
         
-	    if(!( (username!=null) && (email!=null) && (pw1!=null) && (pw2!=null) && (address!=null) && (gender!=null) && (birthday!=null)  
-	    		&& (username!="") && (email!="") && (pw1!="") && (pw2!="") && (address!="") && (gender!="") && (birthday!="") ))
-	    {
-	    	alert('You have not write some important information!');
+//	    if(!(  (username!="") && (email!="") && (pw1!="") && (pw2!="") && (address!="") && (gender!="") && (birthday!="") ))
+//	    {
+//	    	alert('You have not write some important information!');
+//	    	return false;
+//	    }
+	    if(username==""){
+	    	$("#warn_username").hide();
+	    	$("#warn_username2").show();
 	    	return false;
-	    }else if(pw1!=pw2){
+	    }else if(email==""){
+	    	$("#warn_email").hide();
+	    	$("#warn_email2").show();
+	    	return false;
+	    }else if(pw1==""){
+	    	$("#warn_firstpassword2").show();
+	    	return false;
+	    }else if(pw2==""){
+	    	$("#warn_password").hide();
+	    	$("#warn_password2").show();
+	    	return false;
+	    }else if(address==""){
+	    	$("#warn_address2").show();
+	    	return false;
+	    }else if(birthday==""){
+	    	$("#warn_birthday2").show();
+	    	return false;
+	    }
+	    
+	    else if(pw1!=pw2){
 	    	alert("Your two passwords is not consistent!");
 	    	return false;
 	    }else if(!(reg.test(email))){
@@ -77,16 +122,6 @@ $(function(){
             return false;
         }else{
         	return true;
-            /*
-    		$.get('sameUsername',{reg_username: $("#reg_username").attr("value")},function(response2){
-    			if(response2=="Y"){
-    				alert('Your username has been used!');
-    				return false;
-    			}else{
-    				return true;
-    			}
-    		});	
-        	*/
         }  
 	});
 	
@@ -94,7 +129,7 @@ $(function(){
 	$('#reg_nav_personal').bind('click',function(event){
 		$('#reg_family').hide();
 		$('#reg_personal').show();
-		$('#reg_title').text('Create one new personal Health Club account');
+		$('#reg_title').text('Create a new personal Health Club account');
 		$('#reg_nav_family').attr({
 			height:"60"
 		});
@@ -106,7 +141,7 @@ $(function(){
 	$('#reg_nav_family').bind('click',function(event){
 		$('#reg_personal').hide();
 		$('#reg_family').show();
-		$('#reg_title').text('Create one new family Health Club account');
+		$('#reg_title').text('Create a new family Health Club account');
 		$('#reg_nav_personal').attr({
 			height:"50",width:"40"
 		});
@@ -200,52 +235,12 @@ $(function(){
             alert("Image format error!Please upload your image in format png,gif,jpg,jpeg,or bmp!");
             return false;
         }
-	    /* else{
-        	//return true;
-        	$.get('sameUsername2',{reg_username2:username},function(response2){
-    			alert(response2);
-    			if(response2=="Y"){
-    				alert('Your username has been used!');
-    				return false;
-    			}else{
-    				return true;
-    			}
-    		});	
-        }  */
-	    
-	    
-	    /*
-	    alert('mem--');
-	    $('td.td_mem_name').each(function(i,element){
-	    	alert(i);
-	    	
-	    	var name=($($(this).children()).get(0)).attr("value");
-	    	alert(name);
-	    	if(name==null || name==""){
-	    		alter("Please family members' information");
-	    		return false;
-	    	}
-	    });
-	    
-	    $('td.td_mem_birthday').each(function(){
-	    	var birthday=($($(this).children()).get(0)).attr("value");
-	    	if(birthday==null || birthday==""){
-	    		alter("Please family members' information");
-	    		return false;
-	    	}
-	    });
-	    */
 	    return true;
-	    
 	});
 	
-	
-	
-	
-	
-
-
-	
-	
 	$('#reg_family').hide();
+	
+	/***** warning ***********************************************/
+	$(".warning").hide();
+
 });
