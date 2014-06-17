@@ -87,6 +87,7 @@
 
 .warning{
 	color: red;
+	
 }
 
 .header_li{
@@ -187,5 +188,9 @@
 	margin-top: 200px;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+.td_mid{
+	width:50%;
 }
 

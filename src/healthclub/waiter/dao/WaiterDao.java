@@ -25,5 +25,6 @@ public interface WaiterDao {
 	public boolean modifySession(ArrayList<Session1> sessionList);
 	public ArrayList<Member> getMembers(int uid);
 	public boolean createAccount();
+	public ArrayList<Users> getUserList();
 
 }

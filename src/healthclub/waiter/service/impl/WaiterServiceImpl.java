@@ -95,5 +95,8 @@ public class WaiterServiceImpl implements WaiterService {
 	public boolean createAccount(){
 		return waiterDao.createAccount();
 	}
+	public ArrayList<Users> getUserList(){
+		return waiterDao.getUserList();
+	}
 
 }

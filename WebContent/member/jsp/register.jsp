@@ -47,40 +47,46 @@
       <div id="reg_personal">   
       <s:form theme="simple"  role="form" enctype="multipart/form-data" id="register_info" name="register_info" method="post" action="/register" >
         <s:hidden id="reg_type" name="reg_type" value="Personal"/>
+        
         <table class="table table-hover ">
           <tr  >
             <td> <label for="reg_username">Username</label></td>
-            <td><s:textfield id="reg_username" name="reg_username"  cssClass="form-control" placeholder="Username" /></td>
-            <td>The username has been used!</td>
+            <td class="td_mid"><s:textfield id="reg_username" name="reg_username"  cssClass="form-control" placeholder="Username" />
+                              <p class="warning" id="warn_username" >The username has been used!</p>
+                              <p class="warning" id="warn_username2" >Please input the username!</p> </td>
           </tr>
 
           <tr>
             <td><label for="reg_email">Email</label></td>
-            <td><s:textfield   type="email" id="reg_email" name="reg_email"  cssClass="form-control" placeholder="Email" /></td>
-            <td>Email format is wrong!</td>
+            <td><s:textfield   id="reg_email" name="reg_email"  cssClass="form-control" placeholder="Email" />
+                  <p class="warning" id="warn_email">Email format is wrong!</p>
+                  <p class="warning" id="warn_email2">Please input the email!</p></td>
           </tr>
 
           <tr>
             <td><label for="reg_password">Password</label></td>
-            <td><s:password showPassword="true" id="reg_password" name="reg_password" cssClass="form-control" placeholder="Password" /> </td>
+            <td><s:password showPassword="true" id="reg_password" name="reg_password" cssClass="form-control" placeholder="Password" /> 
+                <p class="warning" id="warn_firstpassword2">Please input the password!</p></td>
           </tr>
           <tr>
             <td><label for="reg_password_again">Password</label></td>
-            <td><s:password showPassword="true" id="reg_password_again" name="reg_password_again"  cssClass="form-control" placeholder="Password Again"/> </td>
-            <td>Your two passwords is not consistent!</td>
+            <td><s:password showPassword="true" id="reg_password_again" name="reg_password_again"  cssClass="form-control" placeholder="Password Again"/> 
+                 <p class="warning" id="warn_password">Two passwords aren't consistent!</p>
+                 <p class="warning" id="warn_password2">Please input the password again!</p></td>
           </tr>
           
           <tr>
             <td><label for="reg_address">Address</label></td>
-            <td><s:textfield type="text" id="reg_address" name="reg_address" label="Address" cssClass="form-control" placeholder="Address" /></td>
+            <td><s:textfield type="text" id="reg_address" name="reg_address" label="Address" cssClass="form-control" placeholder="Address" />
+                <p class="warning" id="warn_address2">Please input the address!</p></td>
           </tr>
 
           <tr>
             <td><label for="reg_picture">Picture</label></td>
             <td>             
                 <s:file id="reg_picture" name="reg_picture" />
+                <p class="warning" id="warn_picture">Format must be png,gif,jpg,jpeg,or bmp!</p>
             </td>
-            <td>Image format error!Please in png,gif,jpg,jpeg,or bmp!</td>
           </tr>
 
           <tr>
@@ -99,6 +105,7 @@
             <td>
                <!-- <sx:datetimepicker name="reg_birthday"  id="reg_birthday" displayFormat="yyyy-MM-dd"/>  -->
                 <s:textfield name="reg_birthday"  id="reg_birthday" cssClass="datepicker form-control" data-date-format="yyyy/mm/dd"/> 
+                <p class="warning" id="warn_birthday2">Please input your birthday!</p>
             </td>
             
             <!--  
@@ -134,7 +141,7 @@
 
           <tr>
             <td><label for="reg_email2">Email</label></td>
-            <td><s:textfield   type="email" id="reg_email2" name="reg_email2"  cssClass="form-control" placeholder="Email" /></td>
+            <td><s:textfield   id="reg_email2" name="reg_email2"  cssClass="form-control" placeholder="Email" /></td>
           </tr>
 
           <tr>
