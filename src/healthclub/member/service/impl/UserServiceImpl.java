@@ -47,8 +47,12 @@ public class UserServiceImpl implements UserService {
 		return userDao.modify(user);
 	}
 	
-	public ArrayList<Activity> getActivityList(){
-		return userDao.getActivityList();
+	public int getActivityPageCount(){
+		return userDao.getActivityPageCount();
+	}
+	
+	public ArrayList<Activity> getActivityList(int page){
+		return userDao.getActivityList(page);
 	}
 	
 	public Activity getActivity(int id){

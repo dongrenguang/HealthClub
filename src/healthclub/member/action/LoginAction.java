@@ -29,10 +29,18 @@ public class LoginAction extends BaseAction{
 	    		return "input";
 	    	}
 	    	
+	    	int activityPageCount = userService.getActivityPageCount();
+	    	ArrayList<Integer> pageList = new ArrayList<Integer>();
+	    	for(int i=1;i<=activityPageCount;i++){
+	    		pageList.add(i);
+	    	}
+	    	
 	    	 HttpSession  session=request.getSession();
 	    	 session.setAttribute("username", username);
 	    	 session.setAttribute("id", user.getId());
-	    	 activityList=userService.getActivityList();
+	    	 session.setAttribute("pageList", pageList);
+	    	 session.setAttribute("currentPage", 1);
+	    	 activityList=userService.getActivityList(1);
 	    	return "Homepage";
 	    }else{
 	    	return "input";

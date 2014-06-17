@@ -18,7 +18,8 @@ public interface UserService {
 			String type, Date register_time, int state);
 	public Result modify(Users user);
 	
-	public ArrayList<Activity> getActivityList();
+	public int getActivityPageCount();
+	public ArrayList<Activity> getActivityList(int page);
 	public Activity getActivity(int id);
 	public ArrayList<Session1> getSessionList(int aid);
     public Result order(int uid,int sid);

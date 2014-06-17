@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 
 import healthclub.member.model.Activity;
+import healthclub.member.model.Users;
 import healthclub.member.service.UserService;
 
 public class HomepageAction extends BaseAction{
@@ -17,8 +18,9 @@ public class HomepageAction extends BaseAction{
 	private static final long serialVersionUID = 1L;
 
 	public String execute(){
+		HttpSession session = null;
 		try {
-			HttpSession  session=request.getSession();
+			session=request.getSession();
 	   	    int sessionID=(int) session.getAttribute("id");
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -26,14 +28,22 @@ public class HomepageAction extends BaseAction{
 		}
 		
 		try {
-			HttpSession  session=request.getSession();
+			session=request.getSession();
 	   	    int sessionID=(int) session.getAttribute("id");
 		} catch (Exception e) {
 			// TODO: handle exception
 			return "input";
 		}
 		
-		activityList=userService.getActivityList();
+		int activityPageCount = userService.getActivityPageCount();
+    	ArrayList<Integer> pageList = new ArrayList<Integer>();
+    	for(int i=1;i<=activityPageCount;i++){
+    		pageList.add(i);
+    	}
+    	
+    	session.setAttribute("pageList", pageList);
+    	session.setAttribute("currentPage", 1);
+   	 	activityList=userService.getActivityList(1);
     	return "Homepage";
 	}
 

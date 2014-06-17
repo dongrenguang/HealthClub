@@ -21,7 +21,10 @@ public interface UserDao {
 
 	public Result modify(Users user);
 
+	public ArrayList<Activity> getActivityList(int page);
 	public ArrayList<Activity> getActivityList();
+	
+	public int getActivityPageCount();
 
 	public Activity getActivity(int id);
 

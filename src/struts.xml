@@ -42,6 +42,11 @@
 		    <result name="input">/member/jsp/error.jsp</result>
 		</action>
 		
+		<action name="page" class="PageAction">
+			<result name="Homepage">/member/jsp/homepage.jsp</result>
+			
+		</action>
+		
 		<action name="activity" class="ActivityAction">
 		    <result name="Activity">/member/jsp/activity.jsp</result>
 		    <result name="input">/member/jsp/error.jsp</result>
