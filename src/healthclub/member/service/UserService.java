@@ -20,7 +20,9 @@ public interface UserService {
 	
 	public int getActivityPageCount();
 	public ArrayList<Activity> getActivityList(int page);
+	public ArrayList<Activity> getActivityList();
 	public Activity getActivity(int id);
+	
 	public ArrayList<Session1> getSessionList(int aid);
     public Result order(int uid,int sid);
     public ArrayList<Session1> getHasJoinedAct(int uid);
