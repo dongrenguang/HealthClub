@@ -42,6 +42,12 @@
 		</property>
 	</bean>	
 	
+	<bean id="PageAction" class="healthclub.member.action.PageAction">
+		<property name="UserService">
+			<ref bean="UserService"/>
+		</property>
+	</bean>	
+	
 	<bean id="ModifyAction" class="healthclub.member.action.ModifyAction">
 		<property name="UserService">
 			<ref bean="UserService"/>
@@ -307,6 +313,8 @@
 			<ref bean="WaiterService"/>
 		</property>
 	</bean>
+	
+	
 	
 	
 	<!--  

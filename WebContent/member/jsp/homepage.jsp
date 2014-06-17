@@ -56,8 +56,36 @@
             </tr>
         </table>
         </s:iterator>
-    
-       
-    </div>
+
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<ul class="pagination">
+					<s:iterator value="#session.pageList" id="pageNumber" status="st">
+						<s:url action="page" var="pageLink">
+							<s:param name="gotoPage">
+								<s:property value="#pageNumber" />
+							</s:param>
+						</s:url>
+
+						<s:if test="session.currentPage == #pageNumber">
+							<li class="active"><s:a href="%{pageLink}">
+									<s:property value="#pageNumber" />
+								</s:a></li>
+						</s:if>
+						<s:else>
+							<li><s:a href="%{pageLink}">
+									<s:property value="#pageNumber" />
+								</s:a></li>
+						</s:else>
+
+					</s:iterator>
+
+				</ul>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+
+	</div>
   </body>
 </html>

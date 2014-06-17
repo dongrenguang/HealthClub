@@ -47,6 +47,14 @@ public class UserServiceImpl implements UserService {
 		return userDao.modify(user);
 	}
 	
+	public int getActivityPageCount(){
+		return userDao.getActivityPageCount();
+	}
+	
+	public ArrayList<Activity> getActivityList(int page){
+		return userDao.getActivityList(page);
+	}
+	
 	public ArrayList<Activity> getActivityList(){
 		return userDao.getActivityList();
 	}
@@ -102,6 +110,7 @@ public class UserServiceImpl implements UserService {
 	public boolean hasOrderedSession(int uid,int sid){
 		return userDao.hasOrderedSession(uid, sid);
 	}
+
 	
 
 

@@ -25,6 +25,7 @@ public class UserDaoImpl implements UserDao {
 
 	private static DaoHelper daoHelper = DaoHelperImpl.getBaseDaoInstance();
 	private static UserDaoImpl UserDaoImpl = new UserDaoImpl();
+	public static int PAGE_SIZE = 3;
 
 	private UserDaoImpl() {
 
@@ -173,14 +174,67 @@ public class UserDaoImpl implements UserDao {
 		}
 		return Result.FAIL;
 	}
+	
+	public int getActivityPageCount(){
+		Connection con = daoHelper.getConnection();
+		PreparedStatement statement = null;
+		ResultSet resultSet;
+		int result = -1;
+		try {
+			statement = con.prepareStatement("select count(*) from activity");
+			resultSet = statement.executeQuery();
+			if(resultSet.next()){
+				result = resultSet.getInt(1);
+				result = (int) Math.ceil(result / (PAGE_SIZE+0.0));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		return result;
+	}
 
-	public ArrayList<Activity> getActivityList() {
+	public ArrayList<Activity> getActivityList(int page) {
+		System.out.println("CurrentPage "+page);
 		Connection con = daoHelper.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet result = null;
 
+		int pageNumber = page;
+		int ignorePage = (pageNumber-1) * PAGE_SIZE;
+		
 		try {
-			stmt = con.prepareStatement("select * from activity");
+			stmt = con
+					.prepareStatement("select * from activity where id not in (select t.id from (select * from activity limit "
+							+ ignorePage + " ) as t ) limit " + PAGE_SIZE);
+			result = stmt.executeQuery();
+
+			ArrayList<Activity> activityList = new ArrayList<Activity>();
+			while (result.next()) {
+				Activity activity = new Activity(result.getInt(1),
+						result.getString(2), result.getString(3));
+				activityList.add(activity);
+			}
+			return activityList;
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			daoHelper.closeConnection(con);
+			daoHelper.closePreparedStatement(stmt);
+		}
+		return null;
+	}
+	
+	public ArrayList<Activity> getActivityList() {
+		Connection con = daoHelper.getConnection();
+		PreparedStatement stmt = null;
+		ResultSet result = null;
+		
+		try {
+			stmt = con
+					.prepareStatement("select * from activity");
 			result = stmt.executeQuery();
 
 			ArrayList<Activity> activityList = new ArrayList<Activity>();
@@ -242,7 +296,7 @@ public class UserDaoImpl implements UserDao {
 			while (result.next()) {
 				Session1 session = new Session1(result.getInt(1), aid,
 						result.getString(3), result.getString(4),
-						result.getString(5), result.getString(6),false);
+						result.getString(5), result.getString(6), false);
 				sessionList.add(session);
 			}
 			return sessionList;
@@ -310,7 +364,7 @@ public class UserDaoImpl implements UserDao {
 				Session1 session1 = new Session1(result.getInt(1),
 						result.getInt(2), result.getString(3),
 						result.getString(4), result.getString(5),
-						result.getString(6),false);
+						result.getString(6), false);
 				hasOrderedAct.add(session1);
 			}
 			return hasOrderedAct;
@@ -341,7 +395,7 @@ public class UserDaoImpl implements UserDao {
 				Session1 session1 = new Session1(result.getInt(1),
 						result.getInt(2), result.getString(3),
 						result.getString(4), result.getString(5),
-						result.getString(6),false);
+						result.getString(6), false);
 				joinedAct.add(session1);
 			}
 			return joinedAct;
@@ -534,7 +588,8 @@ public class UserDaoImpl implements UserDao {
 		PreparedStatement stmt = null;
 
 		try {
-			stmt = con.prepareStatement("update pay set type=?,paytime=? where id=?");
+			stmt = con
+					.prepareStatement("update pay set type=?,paytime=? where id=?");
 			stmt.setInt(1, 2);
 			stmt.setString(2, Assist.getNowDateTime());
 			stmt.setInt(3, pid);
@@ -550,36 +605,39 @@ public class UserDaoImpl implements UserDao {
 		}
 		return false;
 	}
-	
+
 	@SuppressWarnings("resource")
-	public boolean judgeUserState(int uid){
+	public boolean judgeUserState(int uid) {
 		Connection con = daoHelper.getConnection();
 		PreparedStatement stmt = null;
 		ResultSet result = null;
 
 		try {
-			stmt = con.prepareStatement("select count(*) from pay where uid=? and type=?");
+			stmt = con
+					.prepareStatement("select count(*) from pay where uid=? and type=?");
 			stmt.setInt(1, uid);
 			stmt.setInt(2, 1);
 			result = stmt.executeQuery();
-			if(result.next()) {
-				int count=result.getInt(1);
-				if(count==0){
-					//正常，state设为2
-					stmt = con.prepareStatement("update users set state=? where id=?");
+			if (result.next()) {
+				int count = result.getInt(1);
+				if (count == 0) {
+					// 正常，state设为2
+					stmt = con
+							.prepareStatement("update users set state=? where id=?");
 					stmt.setInt(1, 2);
 					stmt.setInt(2, uid);
 					stmt.executeUpdate();
-				}
-				else if(count>=1 && count<=6){
-					//欠费少于6个月,state设为1
-					stmt = con.prepareStatement("update users set state=? where id=?");
+				} else if (count >= 1 && count <= 6) {
+					// 欠费少于6个月,state设为1
+					stmt = con
+							.prepareStatement("update users set state=? where id=?");
 					stmt.setInt(1, 1);
 					stmt.setInt(2, uid);
 					stmt.executeUpdate();
-				}else{
-					//欠费大于6个月，state设为3
-					stmt = con.prepareStatement("update users set state=? where id=?");
+				} else {
+					// 欠费大于6个月，state设为3
+					stmt = con
+							.prepareStatement("update users set state=? where id=?");
 					stmt.setInt(1, 3);
 					stmt.setInt(2, uid);
 					stmt.executeUpdate();
@@ -594,10 +652,10 @@ public class UserDaoImpl implements UserDao {
 			daoHelper.closePreparedStatement(stmt);
 		}
 		return false;
-		
+
 	}
-	
-	public boolean hasOrderedSession(int uid,int sid){
+
+	public boolean hasOrderedSession(int uid, int sid) {
 		Connection con = daoHelper.getConnection();
 		PreparedStatement stmt = null;
 
@@ -623,7 +681,7 @@ public class UserDaoImpl implements UserDao {
 			daoHelper.closeResult(result);
 		}
 		return false;
-		
+
 	}
 
 }

@@ -41,6 +41,11 @@
 		    <result name="input">/member/jsp/error.jsp</result>
 		</action>
 		
+		<action name="page" class="PageAction">
+			<result name="Homepage">/member/jsp/homepage.jsp</result>
+			
+		</action>
+		
 		<action name="activity" class="ActivityAction">
 		    <result name="Activity">/member/jsp/activity.jsp</result>
 		    <result name="input">/member/jsp/error.jsp</result>
@@ -121,13 +126,14 @@
 		
 		<action name="SearchAction" class="SearchAction">
 		    <result name="Member">/waiter/jsp/member.jsp</result>
+		    <result name="input">/waiter/jsp/member_search.jsp</result>
 		    <result name="Search2Action" type="chain">Search2Action</result>
-		    <result name="input">/waiter/jsp/error.jsp</result>
+		    
 		</action>
 		
 		<action name="Search2Action" class="Search2Action">
 		    <result name="Member2">/waiter/jsp/member2.jsp</result>
-		    <result name="input">/waiter/jsp/error.jsp</result>
+		    <result name="input">/waiter/jsp/member_search.jsp</result>
 		</action>
 		
 		<action name="W_logoutAction" class="W_logoutAction">

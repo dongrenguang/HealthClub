@@ -5,35 +5,15 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 
 import healthclub.member.model.Activity;
-import healthclub.member.model.Users;
 import healthclub.member.service.UserService;
 
-public class HomepageAction extends BaseAction{
+public class PageAction extends BaseAction {
 	private UserService userService;
+	private int gotoPage;
 	private ArrayList<Activity> activityList=new ArrayList<Activity>();
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
+	
 	public String execute(){
-		HttpSession session = null;
-		try {
-			session=request.getSession();
-	   	    int sessionID=(int) session.getAttribute("id");
-		} catch (Exception e) {
-			// TODO: handle exception
-			return "input";
-		}
-		
-		try {
-			session=request.getSession();
-	   	    int sessionID=(int) session.getAttribute("id");
-		} catch (Exception e) {
-			// TODO: handle exception
-			return "input";
-		}
+		HttpSession  session=request.getSession();
 		
 		int activityPageCount = userService.getActivityPageCount();
     	ArrayList<Integer> pageList = new ArrayList<Integer>();
@@ -42,11 +22,11 @@ public class HomepageAction extends BaseAction{
     	}
     	
     	session.setAttribute("pageList", pageList);
-    	session.setAttribute("currentPage", 1);
-   	 	activityList=userService.getActivityList(1);
+    	activityList=userService.getActivityList(gotoPage);
+    	session.setAttribute("currentPage", gotoPage);
     	return "Homepage";
 	}
-
+	
 	public UserService getUserService() {
 		return userService;
 	}
@@ -62,7 +42,14 @@ public class HomepageAction extends BaseAction{
 	public void setActivityList(ArrayList<Activity> activityList) {
 		this.activityList = activityList;
 	}
-	
-	
+
+	public int getGotoPage() {
+		return gotoPage;
+	}
+
+	public void setGotoPage(int gotoPage) {
+		this.gotoPage = gotoPage;
+	}
+
 
 }
