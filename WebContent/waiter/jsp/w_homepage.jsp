@@ -37,10 +37,21 @@
                      <img src=<s:property value="#activity.picture" />  width="280px" class="homepage_pic" />
                      <div class="homepage_act_info">
                        <div class="homepage_info2">
-                         ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#activity.id" /><br>
-                         Theme:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:property value="#activity.theme" /></br>
-                         
-                        
+                         <table class="table">
+                       	   <tr>
+                         		<td><b>Theme</b></td>
+                         		<td><s:property value="#activity.theme" /></td>
+                           </tr>
+                           <tr>
+                         	    <td><b>Schedule</b></td>
+                         		<td>
+                         			<s:property value="#activity.session1" /><br>
+                         			<s:property value="#activity.session2" /><br>
+                         			<s:property value="#activity.session3" /><br>
+                         			<s:property value="#activity.session4" /><br>
+                         		</td>
+                           </tr>
+                         </table>
 
                        </div>     
                        <s:url action="ModifyActAction" var="activityLink">

@@ -214,6 +214,32 @@ public class UserDaoImpl implements UserDao {
 			while (result.next()) {
 				Activity activity = new Activity(result.getInt(1),
 						result.getString(2), result.getString(3));
+				//
+				ArrayList<Session1> sessionList=getSessionList(activity.getId());
+				String session1="";
+				String session2="";
+				String session3="";
+				String session4="";
+				if(sessionList==null || sessionList.size()==0){
+					session1="......";
+				}
+				else if(sessionList.size()==1){
+					session1=sessionList.get(0).getTime();
+					session2="......";
+				}else if(sessionList.size()==2){
+					session1=sessionList.get(0).getTime();
+					session2=sessionList.get(1).getTime();
+					session3="......";
+				}else{
+					session1=sessionList.get(0).getTime();
+					session2=sessionList.get(1).getTime();
+					session3=sessionList.get(2).getTime();
+					session4="......";
+				}
+				activity.setSession1(session1);
+				activity.setSession2(session2);
+				activity.setSession3(session3);
+				activity.setSession4(session4);
 				activityList.add(activity);
 			}
 			return activityList;

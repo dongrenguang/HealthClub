@@ -39,14 +39,19 @@
                        <div class="homepage_info2">
                       
                          <table class="table">
-                         	<tr>
+                       	   <tr>
                          		<td><b>Theme</b></td>
                          		<td><s:property value="#activity.theme" /></td>
-                         	</tr>
-                         	<tr>
+                           </tr>
+                           <tr>
                          	    <td><b>Schedule</b></td>
-                         		<td></td>
-                         	</tr>
+                         		<td>
+                         			<s:property value="#activity.session1" /><br>
+                         			<s:property value="#activity.session2" /><br>
+                         			<s:property value="#activity.session3" /><br>
+                         			<s:property value="#activity.session4" /><br>
+                         		</td>
+                           </tr>
                          </table>
                         
                        </div>     
