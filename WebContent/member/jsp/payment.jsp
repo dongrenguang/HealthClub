@@ -121,5 +121,14 @@
     </div>
 
   </body>
+  
+    <script>
+		$(function(){
+			$(".active").removeClass("active");
+			$("#payment").addClass("active");
+			
+			});
+  </script>
+  
   <%@ include file="footer.jsp"  %>
 </html>

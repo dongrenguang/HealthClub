@@ -121,5 +121,13 @@
     </div>
 
   </body>
+  
+      <script>
+		$(function(){
+			$(".active").removeClass("active");
+			$("#profile").addClass("active");
+			
+			});
+  </script>
   <%@ include file="footer.jsp"  %>
 </html>

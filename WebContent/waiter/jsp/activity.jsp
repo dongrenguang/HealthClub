@@ -204,5 +204,12 @@
 	</div>
 
 </body>
+    <script>
+		$(function(){
+			$(".active").removeClass("active");
+			$("#activity").addClass("active");
+			
+			});
+  </script>
 <%@ include file="footer.jsp"%>  
  </html>

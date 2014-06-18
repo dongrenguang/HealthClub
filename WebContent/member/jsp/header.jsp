@@ -21,9 +21,9 @@
     </header>
     <div id="header_nav">
         <ul class="nav nav-pills nav_header">
-            <li><a href=homepage.action class="header_li">Home</a></li>       
-            <li><a href=profile.action class=" header_li">Profile</a></li>
-            <li><a href=payment.action class=" header_li">Payment</a></li>
+            <li id="home" class="active"><a href=homepage.action class="header_li">Home</a></li>       
+            <li id="profile" ><a href=profile.action class=" header_li">Profile</a></li>
+            <li id="payment"><a href=payment.action class=" header_li">Payment</a></li>
 
 
         </ul>

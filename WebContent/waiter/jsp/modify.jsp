@@ -122,4 +122,12 @@
     </div>
 
   </body>
+  <script>
+		$(function(){
+			$(".active").removeClass("active");
+			$("#member").addClass("active");
+			
+			});
+  </script>
 <%@ include file="footer.jsp"%>  
+</html>

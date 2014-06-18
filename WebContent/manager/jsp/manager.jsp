@@ -47,20 +47,6 @@
         
         <div id="persionnumber_day">
 			<div id="dayChart" style="margin-top:40px; margin-bottom:90px;"></div>
-        
-            <table class="table table-hover">
-                <caption class="h3" style="margin-bottom:20px;">Daily active number</caption>
-                <tr>
-                  <th>Date</th>
-                   <th>Number</th>
-                </tr>
-                <s:iterator value="persionnumber_dayList" id="persionnumber_dayList" status="st">
-                <tr>
-                   <td><s:property value="#persionnumber_dayList.name" /></td>
-                   <td><s:property value="#persionnumber_dayList.number" /></td>
-                </tr>
-                </s:iterator>
-            </table>
         </div>
         
         

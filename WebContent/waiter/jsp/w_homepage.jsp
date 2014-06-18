@@ -91,5 +91,12 @@
 
 	</div>
   </body>
+      <script>
+		$(function(){
+			$(".active").removeClass("active");
+			$("#home").addClass("active");
+			
+			});
+  </script>
 <%@ include file="footer.jsp"%>  
 </html>
