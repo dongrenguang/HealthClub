@@ -3,16 +3,15 @@
         <img src="<s:url value="/member/images/logo.png" />" id="reg_logo" />
 
         <div class="btn-group navbar-btn btn_header ">
-            <button  type="button" class="btn btn-primary ">
+            <a  href="" class="btn btn-primary ">
                 <s:property value="#session.username_waiter"/>
-            </button>
-            <button type="button" class="btn btn-primary  dropdown-toggle" data-toggle="dropdown">
+            </a>
+            <button type="button" class="btn btn-primary  dropdown-toggle" style="height:34px;" data-toggle="dropdown">
                 <span class="caret"></span>
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <ul class="dropdown-menu" role="menu">
                 <li><a href="<s:url value="W_logoutAction.action" />">Logout</a></li>
-
             </ul>
         </div>
 

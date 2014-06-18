@@ -150,8 +150,10 @@
            </a>
            <br>
         
-
-         <s:submit  cssClass="btn btn-info btn-lg center-block" value="Save"/>
+         <div class="edit_save_cancel">
+        	<s:submit  cssClass="btn btn-info btn-lg btn_edit" value="Save"/>
+       		<a href="profile.action" class="btn btn-info btn-lg btn_edit">Cancel</a>
+        </div>
 
       </s:form>
 

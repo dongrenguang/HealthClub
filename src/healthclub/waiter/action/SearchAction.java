@@ -62,6 +62,12 @@ public class SearchAction extends BaseAction {
 		
 		return "Member";
 	}
+	
+	public String editToMember(){
+		HttpSession  session=request.getSession();
+		uid=(int) session.getAttribute("id");
+		return execute();
+	}
 
 	public WaiterService getWaiterService() {
 		return waiterService;

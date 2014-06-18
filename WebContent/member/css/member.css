@@ -194,3 +194,13 @@
 	width:50%;
 }
 
+.btn_edit{
+	width:90px;
+}
+
+.edit_save_cancel{
+	width:185px;
+	margin-left:auto;
+	margin-right:auto;
+}
+

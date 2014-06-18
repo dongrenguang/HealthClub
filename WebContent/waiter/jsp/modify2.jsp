@@ -41,23 +41,35 @@
         <table class="table table-hover ">
           <tr  >
             <td> <label for="reg_username">Username</label></td>
-            <td><s:textfield id="reg_username" name="reg_username"  cssClass="form-control" placeholder="Username" /></td>
+            <td>
+            	<s:textfield id="reg_username" name="reg_username"  cssClass="form-control" placeholder="Username" />
+            	<p class="warning" id="warn_fusername" >The username has been used!</p>
+                <p class="warning" id="warn_fusername2" >Please input the username!</p>
+            </td>
           </tr>
 
           <tr>
             <td><label for="reg_email">Email</label></td>
-            <td><s:textfield   type="email" id="reg_email" name="reg_email"  cssClass="form-control" placeholder="Email" /></td>
+            <td>
+            	<s:textfield   type="email" id="reg_email" name="reg_email"  cssClass="form-control" placeholder="Email" />
+            	<p class="warning" id="warn_femail">Email format is wrong!</p>
+                <p class="warning" id="warn_femail2">Please input the email!</p>
+                、             	</td>
           </tr>
 
           <tr>
             <td><label for="reg_address">Address</label></td>
-            <td><s:textfield type="text" id="reg_address" name="reg_address" label="Address" cssClass="form-control" placeholder="Address" /></td>
+            <td>
+            	<s:textfield type="text" id="reg_address" name="reg_address" label="Address" cssClass="form-control" placeholder="Address" />
+            	<p class="warning" id="warn_faddress2">Please input the address!</p>
+            </td>
           </tr>
 
           <tr>
             <td><label for="upload">Picture</label></td>
             <td>             
                 <s:file id="upload" name="upload" />
+                <p class="warning" id="warn_fpicture">Format must be png,gif,jpg,jpeg,or bmp!</p>
             </td>
           </tr>
           
@@ -138,9 +150,11 @@
                         <img src=<s:url value="/member/images/addmem.png"/> height="25" width="35"title="Add a family member">
            </a>
            <br>
-        
-
-         <s:submit  cssClass="btn btn-info btn-lg center-block" value="Save"/>
+           
+           <div class="edit_save_cancel">
+        	<s:submit  cssClass="btn btn-info btn-lg btn_edit" value="Save"/>
+       		<a href="editToMember" class="btn btn-info btn-lg btn_edit">Cancel</a>
+         </div>
 
       </s:form>
 

@@ -128,12 +128,17 @@
 		    <result name="Member">/waiter/jsp/member.jsp</result>
 		    <result name="input">/waiter/jsp/member_search.jsp</result>
 		    <result name="Search2Action" type="chain">Search2Action</result>
-		    
 		</action>
 		
 		<action name="Search2Action" class="Search2Action">
 		    <result name="Member2">/waiter/jsp/member2.jsp</result>
 		    <result name="input">/waiter/jsp/member_search.jsp</result>
+		</action>
+		
+		<action name="editToMember" class="SearchAction" method="editToMember">
+		    <result name="Member">/waiter/jsp/member.jsp</result>
+		    <result name="input">/waiter/jsp/member_search.jsp</result>
+		    <result name="Search2Action" type="chain">Search2Action</result>
 		</action>
 		
 		<action name="W_logoutAction" class="W_logoutAction">

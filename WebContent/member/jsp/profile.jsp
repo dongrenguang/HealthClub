@@ -59,11 +59,6 @@
                 </tr> 
             </table>
             <div id="pro_edit_delete">
-                         <s:url action="order" var="orderLink">
-                            <s:param name="id">
-                                <s:property value="id" />
-                            </s:param>
-                         </s:url>
                 <a href="beforeModify.action" class="btn btn-primary btn-xs" title="Edit my base information.">edit</a>&nbsp;&nbsp;&nbsp;
                 <a href="toDelete.action" class="btn btn-primary btn-xs" title="Delete my account." id="deleteAccount">delete</a>
             </div>    

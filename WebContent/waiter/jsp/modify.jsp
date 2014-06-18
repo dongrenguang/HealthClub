@@ -40,12 +40,20 @@
         <table class="table table-striped ">
           <tr  >
             <td> <label for="reg_username">Username</label></td>
-            <td><s:textfield id="reg_username" name="reg_username"  cssClass="form-control" placeholder="Username" /></td>
+            <td>
+            	<s:textfield id="reg_username" name="reg_username"  cssClass="form-control" placeholder="Username" />
+            	<p class="warning" id="warn_username" >The username has been used!</p>
+                <p class="warning" id="warn_username2" >Please input the username!</p>
+            </td>
           </tr>
 
           <tr>
             <td><label for="reg_email">Email</label></td>
-            <td><s:textfield   type="email" id="reg_email" name="reg_email"  cssClass="form-control" placeholder="Email" /></td>
+            <td>
+            	<s:textfield id="reg_email" name="reg_email"  cssClass="form-control" placeholder="Email" />
+            	<p class="warning" id="warn_email">Email format is wrong!</p>
+            	<p class="warning" id="warn_email2">Please input the email!</p>
+            </td>
           </tr>
           
           <tr>
@@ -61,18 +69,23 @@
             <td><label for="reg_birthday">Birthday</label></td>
             <td>
                 <s:textfield name="reg_birthday"  id="reg_birthday" cssClass="datepicker form-control" data-date-format="yyyy/mm/dd"/> 
+            	<p class="warning" id="warn_birthday2">Please input your birthday!</p>
             </td>
           </tr>
 
           <tr>
             <td><label for="reg_address">Address</label></td>
-            <td><s:textfield type="text" id="reg_address" name="reg_address" label="Address" cssClass="form-control" placeholder="Address" /></td>
+            <td>
+            	<s:textfield type="text" id="reg_address" name="reg_address" label="Address" cssClass="form-control" placeholder="Address" />
+            	<p class="warning" id="warn_address2">Please input the address!</p>
+            </td>
           </tr>
 
           <tr>
             <td><label for="upload">Picture</label></td>
             <td>             
                 <s:file id="upload" name="upload" />
+                <p class="warning" id="warn_picture">Format must be png,gif,jpg,jpeg,or bmp!</p>
             </td>
           </tr>
           
@@ -99,7 +112,10 @@
 
         </table>
 
-         <s:submit  cssClass="btn btn-info btn-lg center-block" value="Save"/>
+         <div class="edit_save_cancel">
+        	<s:submit  cssClass="btn btn-info btn-lg btn_edit" value="Save"/>
+       		<a href="editToMember" class="btn btn-info btn-lg btn_edit">Cancel</a>
+         </div>
 
       </s:form>
 

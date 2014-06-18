@@ -6,7 +6,7 @@
             <a  class="btn btn-primary ">
                 <s:property value="#session.username_manager"/>
             </a>
-            <Button class="btn btn-primary  dropdown-toggle" data-toggle="dropdown">
+            <Button class="btn btn-primary  dropdown-toggle" data-toggle="dropdown" style="height:34px;">
                 <span class="caret"></span>
                 <span class="sr-only">Toggle Dropdown</span>
             </Button>
