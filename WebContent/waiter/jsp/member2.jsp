@@ -190,6 +190,6 @@
 
   
  <%@ include file="footer.jsp"%>  
-  
+  </html>
   
   

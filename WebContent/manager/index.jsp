@@ -52,8 +52,9 @@
 			<a href="<s:url value="/member/jsp/register.jsp" />" title="Creat a new Health Club account"></a>
 		</div>
 		<div id="footer">
+		    <hr />
 			Copyright &copy; Software Institute Of Nanjing University <br>
-			By igoo
+			By Teami , 2014
 		</div>
 <!--<div style="display:none">
     <script src='js\login1.js' language='JavaScript' 

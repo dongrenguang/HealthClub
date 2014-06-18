@@ -192,3 +192,16 @@
 	margin-left: auto;
 }
 
+.footer{
+	margin: auto;
+	margin-top: 100px;
+	width: 800px;
+	height: 50px;
+	background: url(../images/footer-bg.png) bottom center no-repeat;
+	text-align: center;
+	font-family: "Times New Roman", Times, Georgia;
+	font-weight: normal;
+	font-size: 16px;
+	color: #8d8d8d;
+}
+

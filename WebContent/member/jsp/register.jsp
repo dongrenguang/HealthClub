@@ -291,4 +291,5 @@
     </div><!-- hidden -->
 
   </body>
+  <%@ include file="footer.jsp"  %>
 </html>
