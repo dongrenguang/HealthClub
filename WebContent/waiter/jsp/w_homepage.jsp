@@ -49,7 +49,7 @@
                             </s:param>
                         </s:url>
                                     
-                        <s:a  theme="simple" href="%{activityLink}" cssClass="btn btn-primary homepage_moreinfo">More Information</s:a>
+                        <s:a  theme="simple" href="%{activityLink}" cssClass="btn btn-default homepage_moreinfo">More >></s:a>
                        
                        
                      </div>                     

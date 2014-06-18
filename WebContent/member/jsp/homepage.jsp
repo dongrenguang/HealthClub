@@ -38,7 +38,16 @@
                      <div class="homepage_act_info">
                        <div class="homepage_info2">
                       
-                         Theme:<s:property value="#activity.theme" /></br>
+                         <table class="table">
+                         	<tr>
+                         		<td><b>Theme</b></td>
+                         		<td><s:property value="#activity.theme" /></td>
+                         	</tr>
+                         	<tr>
+                         	    <td><b>Schedule</b></td>
+                         		<td></td>
+                         	</tr>
+                         </table>
                         
                        </div>     
                        <s:url action="activity" var="activityLink">
@@ -47,7 +56,7 @@
                             </s:param>
                         </s:url>
                                     
-                        <s:a  theme="simple" href="%{activityLink}" cssClass="btn btn-primary homepage_moreinfo">More Information</s:a>
+                        <s:a  theme="simple" href="%{activityLink}" cssClass="btn btn-default homepage_moreinfo">More >></s:a>
                        
                        
                      </div>                     

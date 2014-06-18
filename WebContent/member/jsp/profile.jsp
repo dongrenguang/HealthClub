@@ -90,7 +90,7 @@
                                 <s:property value="#ordered.id" />
                             </s:param>
                         </s:url>
-                        <s:a  theme="simple" href="%{cancelOrderLink}" cssClass="btn btn-primary">Cancel</s:a>
+                        <s:a  theme="simple" href="%{cancelOrderLink}" cssClass="btn btn-danger">Cancel</s:a>
                     </td>                    
                   </tr>
            </s:iterator>  
