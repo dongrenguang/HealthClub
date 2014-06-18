@@ -206,7 +206,7 @@
 </body>
     <script>
 		$(function(){
-			$(".active").removeClass("active");
+			$("#header_nav .active").removeClass("active");
 			$("#activity").addClass("active");
 			
 			});

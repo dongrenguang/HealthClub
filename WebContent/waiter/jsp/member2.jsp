@@ -189,7 +189,7 @@
   </body>
 <script>
 		$(function(){
-			$(".active").removeClass("active");
+			$("#header_nav .active").removeClass("active");
 			$("#member").addClass("active");
 			
 			});

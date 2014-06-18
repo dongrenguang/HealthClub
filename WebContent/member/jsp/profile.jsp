@@ -130,7 +130,7 @@
   
     <script>
 		$(function(){
-			$(".active").removeClass("active");
+			$("#header_nav .active").removeClass("active");
 			$("#profile").addClass("active");
 			
 			});

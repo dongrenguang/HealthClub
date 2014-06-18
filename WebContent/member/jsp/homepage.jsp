@@ -92,7 +92,7 @@
   
   <script>
 		$(function(){
-			$(".active").removeClass("active");
+			$("#header_nav .active").removeClass("active");
 			$("#home").addClass("active");
 			
 			});
