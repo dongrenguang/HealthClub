@@ -19,7 +19,7 @@
     </header>
     <div id="header_nav">
         <ul class="nav nav-pills nav_header">
-            <li><a  class="header_li" id="nav_age">Age</a></li>       
+            <li class="active"><a  class="header_li" id="nav_age">Age</a></li>       
             <li><a  class=" header_li" id="nav_gender">Gender</a></li>
             <li><a  class=" header_li" id="nav_address">Address</a></li>
             <li><a  class=" header_li" id="nav_state">State</a></li>
@@ -27,8 +27,6 @@
             <li><a  class=" header_li" id="nav_coach">Coach</a></li>
             <li><a  class=" header_li" id="nav_site">Site</a></li>
             <li><a  class=" header_li" id="nav_persionnumber_day">Daily active users</a></li>
-            <li><a  class=" header_li" id="nav_persionnumber_month">Monthly active users</a></li>
-
         </ul>
 
     </div>

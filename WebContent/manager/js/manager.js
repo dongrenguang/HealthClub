@@ -11,18 +11,21 @@
 
 */
 
+
+
 $(function(){	
-	$("#age").hide();
+//	$("#age").hide();
 	$("#gender").hide();
 	$("#address").hide();
 	$("#state").hide();
 	$("#coach").hide();
 	$("#site").hide();
-	//$("#persionnumber_day").hide();
-	$("#persionnumber_month").hide();
+	$("#persionnumber_day").hide();
 
 
 	$("#nav_age").bind('click',function(){
+		$(".active").removeClass("active");
+		$(this).parent().addClass("active");
 		$("#age").show();
 	    $("#gender").hide();
 	    $("#address").hide();
@@ -30,10 +33,11 @@ $(function(){
 	    $("#coach").hide();
 	    $("#site").hide();
 	    $("#persionnumber_day").hide();
-	    $("#persionnumber_month").hide();
 	});
 
 	$("#nav_gender").bind('click',function(){
+		$(".active").removeClass("active");
+		$(this).parent().addClass("active");
 		$("#age").hide();
 	    $("#gender").show();
 	    $("#address").hide();
@@ -41,10 +45,11 @@ $(function(){
 	    $("#coach").hide();
 	    $("#site").hide();
 	    $("#persionnumber_day").hide();
-	    $("#persionnumber_month").hide();
 	});
 
 	$("#nav_address").bind('click',function(){
+		$(".active").removeClass("active");
+		$(this).parent().addClass("active");
 		$("#age").hide();
 	    $("#gender").hide();
 	    $("#address").show();
@@ -52,10 +57,11 @@ $(function(){
 	    $("#coach").hide();
 	    $("#site").hide();
 	    $("#persionnumber_day").hide();
-	    $("#persionnumber_month").hide();
 	});
 
 	$("#nav_state").bind('click',function(){
+		$(".active").removeClass("active");
+		$(this).parent().addClass("active");
 		$("#age").hide();
 	    $("#gender").hide();
 	    $("#address").hide();
@@ -63,10 +69,11 @@ $(function(){
 	    $("#coach").hide();
 	    $("#site").hide();
 	    $("#persionnumber_day").hide();
-	    $("#persionnumber_month").hide();
 	});
 
 	$("#nav_coach").bind('click',function(){
+		$(".active").removeClass("active");
+		$(this).parent().addClass("active");
 		$("#age").hide();
 	    $("#gender").hide();
 	    $("#address").hide();
@@ -74,10 +81,11 @@ $(function(){
 	    $("#coach").show();
 	    $("#site").hide();
 	    $("#persionnumber_day").hide();
-	    $("#persionnumber_month").hide();
 	});
 
 	$("#nav_site").bind('click',function(){
+		$(".active").removeClass("active");
+		$(this).parent().addClass("active");
 		$("#age").hide();
 	    $("#gender").hide();
 	    $("#address").hide();
@@ -85,10 +93,11 @@ $(function(){
 	    $("#coach").hide();
 	    $("#site").show();
 	    $("#persionnumber_day").hide();
-	    $("#persionnumber_month").hide();
 	});
 
 	$("#nav_persionnumber_day").bind('click',function(){
+		$(".active").removeClass("active");
+		$(this).parent().addClass("active");
 		$("#age").hide();
 	    $("#gender").hide();
 	    $("#address").hide();
@@ -96,26 +105,8 @@ $(function(){
 	    $("#coach").hide();
 	    $("#site").hide();
 	    $("#persionnumber_day").show();
-	    $("#persionnumber_month").hide();
 	});
 
-	$("#nav_persionnumber_month").bind('click',function(){
-		$("#age").hide();
-	    $("#gender").hide();
-	    $("#address").hide();
-	    $("#state").hide();
-	    $("#coach").hide();
-	    $("#site").hide();
-	    $("#persionnumber_day").hide();
-	    $("#persionnumber_month").show();
-	});
-	
-
 	
 	
-	
-
-
-
-
 });
