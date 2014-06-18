@@ -42,6 +42,7 @@ public class Search2Action extends BaseAction {
 			System.out.println("search2Action  " + sessionUsername);
 		} catch (Exception e) {
 			// TODO: handle exception
+			request.setAttribute("error", "goes wrong!");
 			return "input";
 		}
 

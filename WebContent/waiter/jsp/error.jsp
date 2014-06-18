@@ -9,4 +9,4 @@
 <body>
   <h1>Something wrong!!!</h1>
 </body>
-</html>
+ <%@ include file="footer.jsp"%>  

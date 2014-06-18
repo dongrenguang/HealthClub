@@ -210,4 +210,4 @@
     </div><!-- hidden -->
 
   </body>
-</html>
+<%@ include file="footer.jsp"%>  
