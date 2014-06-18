@@ -31,15 +31,22 @@ public class SearchAction extends BaseAction {
 	private ArrayList<Pay> paymentList=new ArrayList<Pay>();
 	
 	public String execute(){
+		/*System.out.println("???????");
+		System.out.println(uid);*/
 		try {
 			HttpSession  session=request.getSession();
 	   	    String sessionUsername=(String) session.getAttribute("username_waiter");
 		} catch (Exception e) {
 			// TODO: handle exception
+			request.setAttribute("error", "goes wrong!");
 			return "input";
 		}
 		
 		Users user=waiterService.getUser(uid);
+		if(user == null){
+			request.setAttribute("error", "user not found");
+			return "input";
+		}
    	    type=user.getType();
    	    if(type.equals("Family")){
    	    	System.out.println("SearchAction to Search2Action");
