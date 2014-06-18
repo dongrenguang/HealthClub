@@ -164,6 +164,12 @@
 		</property>
 	</bean>		
 	
+	<bean id="W_PageAction" class="healthclub.waiter.action.W_PageAction">
+		<property name="WaiterService">
+			<ref bean="WaiterService"/>
+		</property>
+	</bean>
+	
 	<bean id="W_LoginAction" class="healthclub.waiter.action.LoginAction">
 		<property name="WaiterService">
 			<ref bean="WaiterService"/>

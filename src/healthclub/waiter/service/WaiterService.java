@@ -19,6 +19,9 @@ public interface WaiterService {
 	public int addActivity(String theme,String picture);
 	public boolean saveSessions(ArrayList<Session1> session1s);
 	public boolean saveActivity(Activity activity);
+	
+	public int getActivityPageCount();
+	public ArrayList<Activity> getActivityList(int page);
 	public ArrayList<Activity> getActivityList();
 	public Activity getActivity(int id);
 	public ArrayList<Session1> getSessionList(int aid);  

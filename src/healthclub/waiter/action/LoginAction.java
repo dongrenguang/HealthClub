@@ -1,5 +1,7 @@
 package healthclub.waiter.action;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import healthclub.member.action.BaseAction;
@@ -19,6 +21,15 @@ public class LoginAction extends BaseAction{
 		if(waiterService.login(username, password)){
 			HttpSession  session=request.getSession();
 	    	session.setAttribute("username_waiter", username);
+	    	
+	    	
+	    	int activityPageCount = waiterService.getActivityPageCount();
+	    	ArrayList<Integer> pageList = new ArrayList<Integer>();
+	    	for(int i=1;i<=activityPageCount;i++){
+	    		pageList.add(i);
+	    	}
+	    	session.setAttribute("pageList", pageList);
+	    	session.setAttribute("currentPage", 1);
 			return "W_Homepage";
 		}else{
 			return "input";

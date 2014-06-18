@@ -260,6 +260,14 @@ public class WaiterDaoImpl implements WaiterDao {
 		return false;
 	}
 
+	public int getActivityPageCount(){
+		return userDaoImpl.getActivityPageCount();
+	}
+	
+	public ArrayList<Activity> getActivityList(int page){
+		return userDaoImpl.getActivityList(page);
+	}
+	
 	public ArrayList<Activity> getActivityList() {
 		return userDaoImpl.getActivityList();
 	}

@@ -44,6 +44,10 @@
 			<result name="Homepage">/member/jsp/homepage.jsp</result>
 			
 		</action>
+		<action name="w_page" class="W_PageAction">
+			<result name="W_Homepage">/waiter/jsp/w_homepage.jsp</result>
+			
+		</action>
 		
 		<action name="activity" class="ActivityAction">
 		    <result name="Activity">/member/jsp/activity.jsp</result>

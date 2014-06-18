@@ -19,12 +19,22 @@ public class W_HomepageAction extends BaseAction {
 		try {
 			HttpSession  session=request.getSession();
 	   	    String sessionUsername=(String) session.getAttribute("username_waiter");
+	   	    
+	   	 int activityPageCount = waiterService.getActivityPageCount();
+	    	ArrayList<Integer> pageList = new ArrayList<Integer>();
+	    	for(int i=1;i<=activityPageCount;i++){
+	    		pageList.add(i);
+	    	}
+	    	
+	    	session.setAttribute("pageList", pageList);
+	    	session.setAttribute("currentPage", 1);
+	   	 	activityList = waiterService.getActivityList(1);
 		} catch (Exception e) {
 			// TODO: handle exception
 			return "input";
 		}
 		
-		activityList=waiterService.getActivityList();
+
 		return "W_Homepage";
 		
 	}
