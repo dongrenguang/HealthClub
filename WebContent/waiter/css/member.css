@@ -58,6 +58,10 @@
     margin-left: 300px;
 }
 
+.family_info{
+    float: right;
+}
+
 .table_pay_monthly{
 	width:600px;
 	margin-top: 30px;
@@ -66,7 +70,7 @@
 }
 
 #pro_edit_delete{
-	margin-left: 200px;
+	margin-left: 900px;
 
 }
 
