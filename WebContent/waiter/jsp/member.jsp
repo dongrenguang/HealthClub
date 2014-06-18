@@ -15,18 +15,15 @@
     <script src=<s:url value="/waiter/js/bootstrap-datepicker.js" /> type="text/javascript"></script>
 <title>Insert title here</title>
 </head>
-  <body>
+<body>
     <%@ include file="header.jsp"  %>
     <div class="container">
       <div id="pro_up">
         <div class="member_picture">
             <img src="<s:property value="picture" />" width="200px" />    
         </div>
-
         <div class="info">
-
-
-            <table class="table table_profile">
+            <table class="table table_profile" id="profile2_mem">
                 <tr>
                     <td><label>Username</label></td>
                     <td><s:property value="username" /></td>
@@ -48,128 +45,131 @@
                     <td><s:property value="address" /></td>
                 </tr> 
             </table>
-            <div id="pro_edit_delete">
-                         <s:url action="order" var="orderLink">
-                            <s:param name="id">
-                                <s:property value="id" />
-                            </s:param>
-                         </s:url>
-                <a href="W_BeforeModify.action" class="btn btn-primary btn-xs" title="Edit my base information.">edit</a>&nbsp;&nbsp;&nbsp;
-               
-            </div>    
         </div>
+        <div id="pro_edit_delete">
+           <s:url action="order" var="orderLink">
+              <s:param name="id">
+                  <s:property value="id" />
+              </s:param>
+           </s:url>
+           <a href="W_BeforeModify.action" title="Edit my base information.">edit</a>&nbsp;&nbsp;&nbsp;
+        </div> 
       </div>
       
       <hr />
       <br>
-      <div class="pro_hasordered">
-      <h2><center>Has Ordered Activities</center></h2>
-        <table class="table table-striped table-hover">
-           <tr>
-                    <th>Theme</th>
-                    <th>Time</th>
-                    <th>Location</th>
-                    <th>Coach</th>
-                    <th>Record</th>
-                    
-           </tr>
-        
-          <s:iterator value="orderedAct" id="ordered" status="st">
-                  <tr>
-                    <td><s:property value="#ordered.theme" /></td>
-                    <td><s:property value="#ordered.time" /></td>
-                    <td><s:property value="#ordered.location" /></td>
-                    <td><s:property value="#ordered.coach" /></td>
-                    <td>
-                        <s:url action="JoinAction" var="joinLink">
-                            <s:param name="sid">
-                                <s:property value="#ordered.id" />
-                            </s:param>
-                            <s:param name="uid">
-                                <s:property value="uid" />
-                            </s:param>
-                            
-                        </s:url>
-                        <s:a  theme="simple" href="%{joinLink}" cssClass="btn btn-primary">Join</s:a>
-                    </td>                   
-                  </tr>
-           </s:iterator>  
-         </table>
       
-      </div>
-      
-      <hr />
+      <div class="pro_hasordere">
+          <ul class="nav nav-tabs pro_hasordere">
+            <li class="active"><a href="#ordered" data-toggle="tab">Ordered Activity</a></li>
+            <li><a href="#joined" data-toggle="tab">Joined Activity</a></li>
+            <li><a href="#payment" data-toggle="tab">Payment Record</a></li>
+          </ul>
+
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active" id="ordered">
+              <div class="pro_hasordered">
+		      <h3><center>Has Ordered Activities</center></h3>
+		        <table class="table table-striped table-hover">
+		           <tr>
+		              <th>Theme</th>
+		              <th>Time</th>
+		              <th>Location</th>
+		              <th>Coach</th>
+		              <th>Record</th>
+		           </tr>
+		          <s:iterator value="orderedAct" id="ordered" status="st">
+		            <tr>
+		              <td><s:property value="#ordered.theme" /></td>
+		              <td><s:property value="#ordered.time" /></td>
+		              <td><s:property value="#ordered.location" /></td>
+		              <td><s:property value="#ordered.coach" /></td>
+		              <td>
+		               <s:url action="JoinAction" var="joinLink">
+		                 <s:param name="sid">
+		                     <s:property value="#ordered.id" />
+		                 </s:param>
+		                 <s:param name="uid">
+		                     <s:property value="uid" />
+		                 </s:param>
+		               </s:url>
+		               <s:a  theme="simple" href="%{joinLink}" cssClass="btn btn-success">Join</s:a>
+		              </td>                   
+		            </tr>
+		           </s:iterator>  
+		         </table>
+		      </div>            
+            </div>
+
+            <div class="tab-pane" id="joined">
+             <div class="pro_hasjoined">
+		       <h3><center>Has Joined  Activities</center></h3>
+		        <table class="table table-striped table-hover">
+		           <tr>
+		            <th>Theme</th>
+		            <th>Time</th>
+		            <th>Location</th>
+		            <th>Coach</th>
+		            <th>Modify</th>
+		           </tr>
+		          <s:iterator value="hasJoinedAct" id="hasjoin" status="st">
+		            <tr>
+		              <td><s:property value="#hasjoin.theme" /></td>
+		              <td><s:property value="#hasjoin.time" /></td>
+		              <td><s:property value="#hasjoin.location" /></td>
+		              <td><s:property value="#hasjoin.coach" /></td>
+		              <td>
+		               <s:url action="DeleteActAction" var="deleteLink">
+		                 <s:param name="sid">
+		                     <s:property value="#hasjoin.id" />
+		                 </s:param>
+		                 <s:param name="uid">
+		                     <s:property value="uid" />
+		                 </s:param>
+		                </s:url>
+		                <s:a  theme="simple" href="%{deleteLink}" cssClass="btn btn-danger">delete</s:a>
+		              </td>
+		            </tr>
+		           </s:iterator>  
+		         </table>
+		      </div>             
+            </div>
+            
+            <div class="tab-pane" id="payment">  
+            	<div id="pay_monthly">
+			        <h3><center>Payment Record</center></h3>
+			        <table class="table table-hover table_pay_monthly">
+			          <tr>
+			            <th>Month</th>
+			            <th>Statement</th>
+			            <th>Pay time</th>
+			          </tr>
+			          <s:iterator value="paymentList" id="pays" status="st">
+				           <tr>
+				             <td><s:property value="#pays.month" /></td>
+				             <td>
+				               
+				               <s:if test="#pays.type==1">
+				                 <img src="<s:url value="/member/images/member/unactivated.png" />"  title="has not payed for this month" height="25">
+				               </s:if>
+				               <s:else>
+				                 <img src="<s:url value="/member/images/member/activated.png" />"  title=" has payed for this month" height="25">
+				               </s:else>
+				             </td>
+				             <td><s:property value="#pays.paytime" /></td>
+				           </tr>
+			           </s:iterator>  
+			        </table>
+     			 </div>
+       		</div>
+      	  </div>
+  	  </div>
+	  <hr />
       <br>
-      <div class="pro_hasjoined">
-       <h2><center>Has Joined  Activities</center></h2>
-        <table class="table table-striped table-hover">
-           <tr>
-                    <th>Theme</th>
-                    <th>Time</th>
-                    <th>Location</th>
-                    <th>Coach</th>
-                    <th>Modify</th>
-           </tr>
-        
-          <s:iterator value="hasJoinedAct" id="hasjoin" status="st">
-                  <tr>
-                    <td><s:property value="#hasjoin.theme" /></td>
-                    <td><s:property value="#hasjoin.time" /></td>
-                    <td><s:property value="#hasjoin.location" /></td>
-                    <td><s:property value="#hasjoin.coach" /></td>
-                    <td>
-                       <s:url action="DeleteActAction" var="deleteLink">
-                            <s:param name="sid">
-                                <s:property value="#hasjoin.id" />
-                            </s:param>
-                            <s:param name="uid">
-                                <s:property value="uid" />
-                            </s:param>
-                        </s:url>
-                        <s:a  theme="simple" href="%{deleteLink}" cssClass="btn btn-primary">delete</s:a>
-                    
-                    </td>
-                  </tr>
-           </s:iterator>  
-         </table>
       
-      </div>
       <br>
-      
-      <div id="pay_monthly">
-        <h2 ><center>Payment Record</center></h2>
-        <table class="table table-hover table_pay_monthly">
-          <tr>
-            <th>Month</th>
-            <th>Statement</th>
-            <th>Pay time</th>
+	 
+	</div>
 
-          </tr>
-          
-          <s:iterator value="paymentList" id="pays" status="st">
-                  <tr>
-                    <td><s:property value="#pays.month" /></td>
-                    <td>
-                      
-                      <s:if test="#pays.type==1">
-                        <img src="<s:url value="/member/images/member/unactivated.png" />"  title="has not payed for this month" height="25">
-                      </s:if>
-                      <s:else>
-                        <img src="<s:url value="/member/images/member/activated.png" />"  title=" has payed for this month" height="25">
-                      </s:else>
-                    </td>
-                    <td><s:property value="#pays.paytime" /></td>
-                   
-                  </tr>
-           </s:iterator>  
-          
-
-
-        </table>
-
-      </div>
-      
-    </div>
-
-  </body>
-</html>
+</body>
+<%@ include file="footer.jsp"%>  
