@@ -100,10 +100,10 @@ public class ManagerDaoImpl implements ManagerDao {
 				ageMap.put(age, cnt + 1);
 			}
 
-			// ÅÅÐò
+			// ï¿½ï¿½ï¿½ï¿½
 			List<Map.Entry<String, Integer>> infoIds = Assist.lineSort(ageMap);
 			ArrayList<Line> ageList = new ArrayList<Line>();
-			int amount = getAmount();// ×ÜÈËÊý
+			int amount = getAmount();// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			for (int i = 0; i < infoIds.size(); i++) {
 				String key = infoIds.get(i).getKey();
 				int value = infoIds.get(i).getValue();
@@ -128,7 +128,7 @@ public class ManagerDaoImpl implements ManagerDao {
 		ArrayList<Line> ageList = new ArrayList<Line>();
 		ageList = getAgeList();
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
-		map.put("00~09", 0);
+		map.put("0~09", 0);
 		map.put("10~19", 0);
 		map.put("20~29", 0);
 		map.put("30~39", 0);
@@ -138,15 +138,15 @@ public class ManagerDaoImpl implements ManagerDao {
 		map.put("70~79", 0);
 		map.put("80~89", 0);
 		map.put("90~99", 0);
-		map.put(">=100", 0);
+		map.put("above 100", 0);
 		try {
 			for (int i = 0; i < ageList.size(); i++) {
 				Line line = ageList.get(i);
 				int age = Integer.parseInt((line.getName()));
 				int number = line.getNumber();
 				if (age >= 0 && age < 9) {
-					int cnt = map.get("00~09");
-					map.put("00~09", cnt + number);
+					int cnt = map.get("0~09");
+					map.put("0~09", cnt + number);
 				} else if (age >= 10 && age < 19) {
 					int cnt = map.get("10~19");
 					map.put("10~19", cnt + number);
@@ -175,8 +175,8 @@ public class ManagerDaoImpl implements ManagerDao {
 					int cnt = map.get("90~99");
 					map.put("90~99", cnt + number);
 				} else {
-					int cnt = map.get(">=100");
-					map.put(">=100", cnt + number);
+					int cnt = map.get("above 100");
+					map.put("above 100", cnt + number);
 				}
 			}// for
 		} catch (Exception e) {
@@ -184,7 +184,7 @@ public class ManagerDaoImpl implements ManagerDao {
 			e.printStackTrace();
 		}
 		/*
-		 * int amount=getAmount();// ×ÜÈËÊý Iterator iterator =
+		 * int amount=getAmount();// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Iterator iterator =
 		 * map.entrySet().iterator(); ArrayList<Line> ageGroupList=new
 		 * ArrayList<Line>(); while (iterator.hasNext()) { Entry entry = (Entry)
 		 * iterator.next(); String key =(String) entry.getKey(); int value=
@@ -193,7 +193,7 @@ public class ManagerDaoImpl implements ManagerDao {
 		 */
 		List<Map.Entry<String, Integer>> infoIds = Assist.lineSort(map);
 		ArrayList<Line> ageGroupList = new ArrayList<Line>();
-		int amount = getAmount();// ×ÜÈËÊý
+		int amount = getAmount();// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		for (int i = 0; i < infoIds.size(); i++) {
 			String key = infoIds.get(i).getKey();
 			int value = infoIds.get(i).getValue();
@@ -408,7 +408,7 @@ public class ManagerDaoImpl implements ManagerDao {
 				map.put(monthString, cnt + 1);
 			}
 			
-			//ÅÅÐò
+			//ï¿½ï¿½ï¿½ï¿½
 			List<Map.Entry<String, Integer>> infoIds = Assist.lineSort(map);
 			ArrayList<Line2> lineList = new ArrayList<Line2>();
 			for (int i = 0; i < infoIds.size(); i++) {
@@ -453,8 +453,8 @@ public class ManagerDaoImpl implements ManagerDao {
 				map.put(dayString, cnt + 1);
 			}
 			
-			//ÅÅÐò
-			List<Map.Entry<String, Integer>> infoIds = Assist.lineSort(map);
+			//ï¿½ï¿½ï¿½ï¿½
+			List<Map.Entry<String, Integer>> infoIds = Assist.daySort(map);
 			ArrayList<Line2> lineList = new ArrayList<Line2>();
 			for (int i = 0; i < infoIds.size(); i++) {
 				String key = infoIds.get(i).getKey();
@@ -497,7 +497,7 @@ public class ManagerDaoImpl implements ManagerDao {
 				count_member = result.getInt(1);
 			}
 
-			int amount = count_member + count_users;// ×ÜÈËÊý
+			int amount = count_member + count_users;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			return amount;
 		} catch (SQLException e) {
 			// TODO: handle exception
@@ -571,7 +571,7 @@ public class ManagerDaoImpl implements ManagerDao {
 			map.put(gender, cnt + 1);
 		}
 
-		// ÅÅÐò
+		// ï¿½ï¿½ï¿½ï¿½
 		List<Map.Entry<String, Integer>> infoIds = Assist.lineSort(map);
 		ArrayList<Line> lineList = new ArrayList<Line>();
 		for (int i = 0; i < infoIds.size(); i++) {

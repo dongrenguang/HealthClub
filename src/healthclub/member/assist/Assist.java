@@ -68,7 +68,7 @@ public class Assist {
         return returnPath;
     }
     
-    public static String getPictureType(String picName){//分割字符串，得到图片的格式，比如“.png”
+    public static String getPictureType(String picName){//锟街革拷锟街凤拷锟矫碉拷图片锟侥革拷式锟斤拷锟斤拷锟界“.png锟斤拷
     	String[] strArr = picName.split("\\.");
     	int count=strArr.length;
     	return "."+strArr[count-1];  	
@@ -88,8 +88,8 @@ public class Assist {
     }
     
     public static String getNowDateTime(){
-    	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-		String nowDateTime=df.format(new Date());// new Date()为获取当前系统时间
+    	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//锟斤拷锟斤拷锟斤拷锟节革拷式
+		String nowDateTime=df.format(new Date());// new Date()为锟斤拷取锟斤拷前系统时锟斤拷
 		return nowDateTime;
     }
     
@@ -116,11 +116,39 @@ public class Assist {
     	List<Map.Entry<String, Integer>> infoIds =
     		    new ArrayList<Map.Entry<String, Integer>>(map.entrySet());
     	
-    	        //排序
+    	        //锟斤拷锟斤拷
     			Collections.sort(infoIds, new Comparator<Map.Entry<String, Integer>>() {   
     			    public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {      
     			        //return (o2.getValue() - o1.getValue()); 
     			        return (o1.getKey()).toString().compareTo(o2.getKey());
+    			    }
+    			}); 
+    			
+    			return infoIds;
+    }
+    
+    
+    public static List<Map.Entry<String, Integer>> daySort(HashMap<String, Integer> map){
+    	List<Map.Entry<String, Integer>> infoIds =
+    		    new ArrayList<Map.Entry<String, Integer>>(map.entrySet());
+    	
+    	        //锟斤拷锟斤拷
+    			Collections.sort(infoIds, new Comparator<Map.Entry<String, Integer>>() {   
+    			    public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {      
+    			        //return (o2.getValue() - o1.getValue()); 
+    			    	String key1 = o1.getKey().toString();
+    			    	String[] temp1 = key1.split(" ");
+    			    	int day1 = Integer.parseInt(temp1[0]);
+    					String key2 = o2.getKey().toString();
+    					String[] temp2 = key2.split(" ");
+    			    	int day2 = Integer.parseInt(temp2[0]);
+    			        if(day1 > day2){
+    			        	return 1;
+    			        }else if (day1 == day2) {
+							return 0;
+						}else{
+							return -1;
+						}
     			    }
     			}); 
     			
@@ -170,8 +198,8 @@ public class Assist {
 	    }
 	    
 	    Calendar c=Calendar.getInstance();
-		int current_year = c.get(Calendar.YEAR);    //获取年
-		int current_month = c.get(Calendar.MONTH) + 1;   //获取月份，0表示1月份
+		int current_year = c.get(Calendar.YEAR);    //锟斤拷取锟斤拷
+		int current_month = c.get(Calendar.MONTH) + 1;   //锟斤拷取锟铰份ｏ拷0锟斤拷示1锟铰凤拷
 		
 		if(current_year!=year || current_month!=monthInt){
 			return "";
@@ -182,8 +210,8 @@ public class Assist {
     
     public static String getNowMonth(){
     	Calendar c=Calendar.getInstance();
-		int current_year = c.get(Calendar.YEAR);    //获取年
-		int current_month = c.get(Calendar.MONTH) + 1;   //获取月份，0表示1月份
+		int current_year = c.get(Calendar.YEAR);    //锟斤拷取锟斤拷
+		int current_month = c.get(Calendar.MONTH) + 1;   //锟斤拷取锟铰份ｏ拷0锟斤拷示1锟铰凤拷
 		
 		return current_year+"-"+current_month;
     }
