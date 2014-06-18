@@ -66,8 +66,8 @@ public class Search2Action extends BaseAction {
 		paymentList = waiterService.GetPaymentList(uid);
 
 		HttpSession session = request.getSession();
-		session.removeAttribute("id");
-		session.setAttribute("id", uid);
+		session.removeAttribute("waiter_memberID");
+		session.setAttribute("waiter_memberID", uid);
 
 		return "Member2";
 	}

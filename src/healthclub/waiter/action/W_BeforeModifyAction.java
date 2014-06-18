@@ -30,7 +30,7 @@ public class W_BeforeModifyAction extends BaseAction{
 		int id=-1;
 		try {
 			HttpSession  session=request.getSession();
-		    id=(int) session.getAttribute("id");
+		    id=(int) session.getAttribute("waiter_memberID");
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

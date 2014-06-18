@@ -35,7 +35,6 @@
 		    <result name="Member2" type="chain">Search2Action</result>
 		</action>
 		
-		
 		<action name="homepage" class="HomepageAction">
 		    <result name="Homepage">/member/jsp/homepage.jsp</result>
 		    <result name="input">/member/jsp/error.jsp</result>

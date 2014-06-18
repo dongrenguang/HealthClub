@@ -64,15 +64,15 @@ public class SearchAction extends BaseAction {
    	    paymentList=waiterService.GetPaymentList(uid);
    	    
 		 HttpSession  session=request.getSession();
-		 session.removeAttribute("id");
-		 session.setAttribute("id", uid);
+		 session.removeAttribute("waiter_memberID");
+		 session.setAttribute("waiter_memberID", uid);
 		
 		return "Member";
 	}
 	
 	public String editToMember(){
 		HttpSession  session=request.getSession();
-		uid=(int) session.getAttribute("id");
+		uid=(int) session.getAttribute("waiter_memberID");
 		return execute();
 	}
 

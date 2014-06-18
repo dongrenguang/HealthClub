@@ -34,15 +34,26 @@ public class Modify2Action extends BaseAction {
 	public String execute(){
 		try {
 			HttpSession  session=request.getSession();
-	   	    int sessionID=(int) session.getAttribute("id");
+			if(waiter==null){
+				int sessionID=(int) session.getAttribute("id");
+			}else if(waiter.equals("waiter")){
+			    int sessionID=(int) session.getAttribute("waiter_memberID");
+			}else{
+				return "input";
+			}
 		} catch (Exception e) {
 			// TODO: handle exception
 			return "input";
 		}
 		
 		HttpSession  session=request.getSession();
-		int id=(int) session.getAttribute("id");
-		
+		int id=0;
+		if(waiter==null){
+			id=(int) session.getAttribute("id");
+		}else if(waiter.equals("waiter")){
+			id=(int) session.getAttribute("waiter_memberID");
+		}
+
 		Users user=userService.getUser(id);
 		
 		user.setUsername(reg_username);

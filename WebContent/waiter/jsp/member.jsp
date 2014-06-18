@@ -52,7 +52,7 @@
                   <s:property value="id" />
               </s:param>
            </s:url>
-           <a href="W_BeforeModify.action" title="Edit my base information.">edit</a>&nbsp;&nbsp;&nbsp;
+           <a href="W_BeforeModify.action" title="Edit my base information." >[ Edit ]</a>&nbsp;&nbsp;&nbsp;
         </div> 
       </div>
       

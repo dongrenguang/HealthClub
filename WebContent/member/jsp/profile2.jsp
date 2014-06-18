@@ -76,10 +76,10 @@
                 
                 </tr>
             </table>
-            <div id="pro_edit_delete">
-                <a href="beforeModify2.action" class="btn btn-primary btn-xs" title="Edit my base information.">edit</a>&nbsp;&nbsp;&nbsp;
-                <a href="toDelete.action" class="btn btn-primary btn-xs" title="Delete my account." id="deleteAccount">delete</a>
-            </div>
+        </div>
+        <div id="pro_edit_delete">
+                <a href="beforeModify2.action"  title="Edit my base information.">[ Edit ]</a>&nbsp;&nbsp;&nbsp;
+                <a href="toDelete.action"  title="Delete my account." id="deleteAccount">[ Delete ]</a>
         </div>
       </div>
       

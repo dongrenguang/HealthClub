@@ -57,12 +57,12 @@
                     <td><label>Address</label></td>
                     <td><s:property value="address" /></td>
                 </tr> 
-            </table>
-            <div id="pro_edit_delete">
-                <a href="beforeModify.action" class="btn btn-primary btn-xs" title="Edit my base information.">edit</a>&nbsp;&nbsp;&nbsp;
-                <a href="toDelete.action" class="btn btn-primary btn-xs" title="Delete my account." id="deleteAccount">delete</a>
-            </div>    
+            </table>           
         </div>
+        <div id="pro_edit_delete">
+                <a href="beforeModify.action"  title="Edit my base information.">[ Edit ]</a>&nbsp;&nbsp;&nbsp;
+                <a href="toDelete.action"  title="Delete my account." id="deleteAccount">[ Delete ]</a>
+        </div>    
       </div>
       
       <hr />

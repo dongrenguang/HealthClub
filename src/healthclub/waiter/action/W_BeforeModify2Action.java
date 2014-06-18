@@ -31,7 +31,7 @@ public class W_BeforeModify2Action extends BaseAction {
 		}
 		
 		HttpSession  session=request.getSession();
-		int id=(int) session.getAttribute("id");
+		int id=(int) session.getAttribute("waiter_memberID");
 		
 		Users user=userService.getUser(id);
 		reg_username=user.getUsername();
