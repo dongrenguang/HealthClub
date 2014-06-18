@@ -74,16 +74,16 @@
       
       <div class="pro_hasordere">
           <ul class="nav nav-tabs pro_hasordere">
-            <li class="active"><a href="#ordered" data-toggle="tab">Ordered Activity</a></li>
-            <li><a href="#joined" data-toggle="tab">Joined Activity</a></li>
-            <li><a href="#payment" data-toggle="tab">Payment Record</a></li>
+            <li class="active"><a href="#ordered" data-toggle="tab"><h4>Ordered Activity</h4></a></li>
+            <li><a href="#joined" data-toggle="tab"><h4>Joined Activity</h4></a></li>
+            <li><a href="#payment" data-toggle="tab"><h4>Payment Record</h4></a></li>
           </ul>
 
           <div id="myTabContent" class="tab-content">
             
             <div class="tab-pane active" id="ordered">
               <div class="pro_hasordered">
-			      <h3><center>Has Ordered Activities</center></h3>
+              <br>
 			        <table class="table table-striped table-hover">
 			           <tr>
 	                    <th>Theme</th>
@@ -119,7 +119,7 @@
 
             <div class="tab-pane" id="joined">
              <div class="pro_hasjoined">
-		       <h3><center>Has Joined  Activities</center></h3>
+             <br>
 		        <table class="table table-striped table-hover">
 		           <tr>
                     <th>Theme</th>
@@ -153,7 +153,6 @@
             
             <div class="tab-pane" id="payment">  
            	 <div id="pay_monthly">
-		        <h3><center>Payment Record</center></h3>
 		        <table class="table table-hover table_pay_monthly">
 		          <tr>
 		            <th>Month</th>

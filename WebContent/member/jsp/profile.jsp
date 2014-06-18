@@ -66,19 +66,27 @@
       </div>
       
       <hr />
-      <br>
+      
       <div class="pro_hasordered">
-      <h2><center>Ordered Activities</center></h2>
-        <table class="table table-striped table-hover">
-           <tr>
+      	 
+      	 <ul class="nav nav-tabs pro_hasordere">
+            <li class="active"><a href="#ordered" data-toggle="tab"><h4>Ordered Activity</h4></a></li>
+            <li><a href="#joined" data-toggle="tab"><h4>Joined Activity</h4></a></li>
+          </ul>
+         
+      	  <br>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane active" id="ordered">
+              <div class="pro_hasordered">
+		      	<table class="table table-striped table-hover">
+           		  <tr>
                     <th>Theme</th>
                     <th>Time</th>
                     <th>Location</th>
                     <th>Coach</th>
                     <th>Operate</th>
-           </tr>
-        
-          <s:iterator value="orderedAct" id="ordered" status="st">
+          		  </tr>
+          		  <s:iterator value="orderedAct" id="ordered" status="st">
                   <tr>
                     <td><s:property value="#ordered.theme" /></td>
                     <td><s:property value="#ordered.time" /></td>
@@ -93,37 +101,34 @@
                         <s:a  theme="simple" href="%{cancelOrderLink}" cssClass="btn btn-danger">Cancel</s:a>
                     </td>                    
                   </tr>
-           </s:iterator>  
-         </table>
-      
-          
-        
-      
-      </div>
-      
-      <hr />
-      <br>
-      <div class="pro_hasjoined">
-       <h2><center>Joined  Activities</center></h2>
-        <table class="table table-striped table-hover">
-           <tr>
+           		  </s:iterator>  
+         		</table>
+		      </div>            
+            </div>
+
+            <div class="tab-pane" id="joined">
+              <div class="pro_hasjoined">
+		       <table class="table table-striped table-hover">
+           		<tr>
                     <th>Theme</th>
                     <th>Time</th>
                     <th>Location</th>
                     <th>Coach</th>
-           </tr>
+           		</tr>
         
-          <s:iterator value="hasJoinedAct" id="hasjoin" status="st">
-                  <tr>
+          		<s:iterator value="hasJoinedAct" id="hasjoin" status="st">
+                <tr>
                     <td><s:property value="#hasjoin.theme" /></td>
                     <td><s:property value="#hasjoin.time" /></td>
                     <td><s:property value="#hasjoin.location" /></td>
                     <td><s:property value="#hasjoin.coach" /></td>
-                  </tr>
-           </s:iterator>  
-         </table>
-      
-      </div>
+                </tr>
+          		</s:iterator>  
+         	   </table>
+		      </div>             
+            </div>
+      	  </div>
+       </div>
     </div>
 
   </body>
