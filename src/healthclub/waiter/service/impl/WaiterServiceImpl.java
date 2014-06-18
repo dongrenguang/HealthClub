@@ -73,6 +73,14 @@ public class WaiterServiceImpl implements WaiterService {
 		return waiterDao.saveActivity(activity);
 	}
 	
+	public int getActivityPageCount(){
+		return waiterDao.getActivityPageCount();
+	}
+	
+	public ArrayList<Activity> getActivityList(int page){
+		return waiterDao.getActivityList(page);
+	}
+	
 	public ArrayList<Activity> getActivityList(){
 		return waiterDao.getActivityList();
 	}
