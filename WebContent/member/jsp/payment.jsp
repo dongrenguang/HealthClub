@@ -80,11 +80,11 @@
       <hr align="CENTER" size="2" width="100%" color="gray" >  <!--横线-->
 
       <div id="pay_monthly">
-        <h2 ><center>The statement of your account.</center></h2>
+        <h2 ><center>Account  State</center></h2>
         <table class="table table-hover table_pay_monthly">
           <tr>
             <th>Month</th>
-            <th>Statement</th>
+            <th>State</th>
             <th>Pay time</th>
 
           </tr>

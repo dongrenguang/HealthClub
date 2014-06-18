@@ -19,8 +19,8 @@
     <div id="header_nav">
         <ul class="nav nav-pills nav_header">
             <li id="home"><a href=W_HomepageAction.action class="header_li">Home</a></li>       
-            <li id="activity"><a href=BeforeMakeActivity.action  class=" header_li">Make activity</a></li>
-            <li id="member"><a href=BeforeMemberCenter.action class=" header_li">Member center</a></li>
+            <li id="activity"><a href=BeforeMakeActivity.action  class=" header_li">Create Activity</a></li>
+            <li id="member"><a href=BeforeMemberCenter.action class=" header_li">Member Center</a></li>
 
         </ul>
 

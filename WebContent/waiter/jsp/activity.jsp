@@ -30,7 +30,7 @@
 	<div class="container ">
 		<div class="record_h2">
 			<h2>
-				Make Activity <img
+				Create Activity <img
 					src="<s:url value="/waiter/images/waiter/act_make.png" />"
 					height="60">
 			</h2>

@@ -68,7 +68,7 @@
       <hr />
       <br>
       <div class="pro_hasordered">
-      <h2><center>Has Ordered Activities</center></h2>
+      <h2><center>Ordered Activities</center></h2>
         <table class="table table-striped table-hover">
            <tr>
                     <th>Theme</th>
@@ -104,7 +104,7 @@
       <hr />
       <br>
       <div class="pro_hasjoined">
-       <h2><center>Has Joined  Activities</center></h2>
+       <h2><center>Joined  Activities</center></h2>
         <table class="table table-striped table-hover">
            <tr>
                     <th>Theme</th>

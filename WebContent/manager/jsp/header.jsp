@@ -26,7 +26,7 @@
             
             <li><a  class=" header_li" id="nav_coach">Coach</a></li>
             <li><a  class=" header_li" id="nav_site">Site</a></li>
-            <li><a  class=" header_li" id="nav_persionnumber_day">Daily active users</a></li>
+            <li><a  class=" header_li" id="nav_persionnumber_day">Users/Day</a></li>
         </ul>
 
     </div>
