@@ -3,10 +3,10 @@
         <img src="<s:url value="/member/images/logo.png" />" id="reg_logo" />
 
         <div class="btn-group navbar-btn btn_header ">
-            <a href="profile.action" class="btn btn-primary ">
+            <a href="profile.action" class="btn btn-primary " style="height:34px;">
                 <s:property value="#session.username"/>
             </a>
-            <Button class="btn btn-primary  dropdown-toggle" data-toggle="dropdown">
+            <Button class="btn btn-primary  dropdown-toggle" data-toggle="dropdown" style="height:34px;">
                 <span class="caret"></span>
                 <span class="sr-only">Toggle Dropdown</span>
             </Button>

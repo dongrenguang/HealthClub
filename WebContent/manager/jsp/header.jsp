@@ -3,7 +3,7 @@
         <img src="<s:url value="/member/images/logo.png" />" id="reg_logo" />
 
         <div class="btn-group navbar-btn btn_header ">
-            <a  class="btn btn-primary ">
+            <a  class="btn btn-primary " style="height:34px;">
                 <s:property value="#session.username_manager"/>
             </a>
             <Button class="btn btn-primary  dropdown-toggle" data-toggle="dropdown" style="height:34px;">

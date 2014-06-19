@@ -51,8 +51,10 @@
 					<table class="table table-hover">
 						<tr>
 							<td><label for="act_theme">Theme</label></td>
-							<td><s:textfield name="act_theme" id="act_theme"
-									cssClass="form-control" placeholder="input a theme" /></td>
+							<!-- <td><s:textfield name="act_theme" id="act_theme"
+									cssClass="form-control" placeholder="input a theme" type="required"/></td>  -->
+									<td><input name="act_theme" id="act_theme"
+									class="form-control" placeholder="input a theme" required/></td>
 						</tr>
 						<tr>
 							<td><label for="act_picture">Picture</label></td>
@@ -63,7 +65,7 @@
 
 					<div id="act_sessions">
 						<h4>
-							<center>Sessions</center>
+							<center>Schedule</center>
 						</h4>
 						<table class="table table-striped table_border_alone">
 							<tr>
@@ -71,7 +73,7 @@
 								<td>
 									<div class="input-append date form_datetime">
 										<input size="16" type="text" value="" class="form-control"
-											id="act_time" name="act_time"> <span class="add-on"><i
+											id="act_time" name="act_time" required> <span class="add-on"><i
 											class="icon-th"></i></span>
 									</div> <script type="text/javascript">
 										$(".form_datetime").datetimepicker({
